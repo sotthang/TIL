@@ -8,6 +8,11 @@
 ### 흐름
 ![](image_git_flow.png)
 
+working directory : 현재 작업하고 있는 프로젝트의 directory
+<br>
+staging area : commit 을 하기 위해 git add 명령어로 추가한 파일들이 있는 area
+<br>
+
 git 은 파일을 modified, staged, committed 로 관리
 - modified : 파일이 수정된 상태
 - staged : 수정할 파일을 커밋할 것이라고 표시한 상태
