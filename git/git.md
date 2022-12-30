@@ -98,6 +98,12 @@ merge 시
 2. 작업한 파일이 중복된다면 conflict 발생, 중복 파일 확인 후 수정 후 직접 commit
 <br>
 
+### 명령어
+```
+- git merge <branch name> : 현재 head 와 branch name 을 merge
+```
+<br>
+
 #### fast forward merge
 master (main) 에서 변경된 사항이 없을 때 merge 하는 경우
 <br>
