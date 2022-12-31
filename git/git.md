@@ -109,12 +109,23 @@ merge 시
 ```
 <br>
 
-#### fast forward merge
+### fast forward merge
 master (main) 에서 변경된 사항이 없을 때 merge 하는 경우
 <br>
 
-#### merge commit
+### merge commit
 master (main) 에서 변경된 사항이 있는 경우
+<br>
+<br>
+
+## Fork 란
+다른 사람의 저장소의 repository 를 내 원격저장소로 가져오는 것
+(clone 은 내 로컬저장소로 가져오는 것)
+<br>
+<br>
+
+## Pull Request 란
+다른 사람의 저장소에 내가 작업한 코드를 반영해달라고 요청하는 것
 <br>
 <br>
 
