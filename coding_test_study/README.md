@@ -9,9 +9,9 @@
 
 |날짜|문제|풀이|
 |---|---|---|
-|1월1일|[2557 Hello World](https://www.acmicpc.net/problem/2557)|[2557_Hello World.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/2557_Hello%20World.py)|
-|1월1일|[1000 A+B](https://www.acmicpc.net/problem/1000)|[1000_A+B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1000_A+B.py)|
-||||
+|1월 1일|[2557 Hello World](https://www.acmicpc.net/problem/2557)|[2557_Hello World.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/2557_Hello%20World.py)|
+|1월 1일|[1000 A+B](https://www.acmicpc.net/problem/1000)|[1000_A+B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1000_A+B.py)|
+|1월 1일|[1001 A-B](https://www.acmicpc.net/problem/1001)|[1001_A-B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1001_A-B.py)|
 ||||
 
 </details>
