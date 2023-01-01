@@ -4,7 +4,7 @@
 더 좋은 풀이의 PR 은 언제나 환영입니다
 
 
-<details>
+<details open>
 <summary>2023년 1월</summary>
 
 |날짜|문제|풀이|
@@ -13,6 +13,7 @@
 |1월 1일|[1000 A+B](https://www.acmicpc.net/problem/1000)|[1000_A+B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1000_A+B.py)|
 |1월 1일|[1001 A-B](https://www.acmicpc.net/problem/1001)|[1001_A-B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1001_A-B.py)|
 |1월 1일|[10998 AxB](https://www.acmicpc.net/problem/10998)|[10998_AxB.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/10998_AxB.py)|
+|1월 1일|[1008 A/B](https://www.acmicpc.net/problem/1008)|[1008_A/B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1008_A/B.py)|
 ||||
 
 </details>
