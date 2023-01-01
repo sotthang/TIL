@@ -9,7 +9,7 @@
 
 |날짜|문제|풀이|
 |---|---|---|
-|1월1일|[2557 Hello World](https://www.acmicpc.net/problem/2557)|11|
+|1월1일|[2557 Hello World](https://www.acmicpc.net/problem/2557)|[Hello World.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/Hello%20World.py)|
 
 </details>
 
