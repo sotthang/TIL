@@ -14,6 +14,7 @@
 |1월 1일|[1001 A-B](https://www.acmicpc.net/problem/1001)|[1001_A-B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1001_A-B.py)|
 |1월 1일|[10998 AxB](https://www.acmicpc.net/problem/10998)|[10998_AxB.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/10998_AxB.py)|
 |1월 1일|[1008 A/B](https://www.acmicpc.net/problem/1008)|[1008_A/B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1008_A%25B.py)|
+|1월 2일|[10869 사칙연산](https://www.acmicpc.net/problem/10869)|[1008_A/B.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/1008_A%25B.py)|
 ||||
 
 </details>
