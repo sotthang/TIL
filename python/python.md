@@ -259,11 +259,11 @@ True, False 값을 가진 타입 (True 는 1, False 는 0 에 해당)
 순서가 있는 데이터 (Ordered) vs 순서가 없는 데이터 (Unordered)
 
 - 시퀀스
-    - 문자열
-    - 리스트
-    - 튜플
-    - 레인지
+    - 문자열 (string)
+    - 리스트 (list)
+    - 튜플 (tuple)
+    - 레인지 (range)
 - 컬렉션 / 비시퀀스
-    - 세트
-    - 딕셔너리
+    - 셋 (set)
+    - 딕셔너리 (dictionary)
 <br>
