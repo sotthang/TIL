@@ -14,7 +14,6 @@
 - 인터프리터 언어 (Interpreter)
 - 객제 지향 프로그래밍 (Object Oriented Programming)
 <br>
-<br>
 
 ### 인터프리터 란
 코드를 한 줄씩 읽어 내려가며 소스코드를 기계어로 변환하는 컴파일 과정 없이 실행하는 프로그램
@@ -34,6 +33,7 @@
 
 ### IDLE (Intergrated Development and Learning Environment)
 파이썬 설치시 같이 설치되는 내장프로그램으로 파이썬 프로그램 작성을 도와주는 통합개발 환경
+<br>
 <br>
 
 ## 코드 스타일 가이드
@@ -57,6 +57,7 @@ Ex)
     - 클래스는 단어 첫 문자를 대문자로 사용
     - module name 은 짧게 소문자로 사용 등
 <br>
+<br>
 
 ## 주석
 코드에 대한 설명으로 코드에 반영되지 않음
@@ -67,6 +68,7 @@ name = naru
 # 이름 변수 할당
 ```
 <br>
+<br>
 
 ## 입출력
 input, print 로 입출력 가능
@@ -75,6 +77,7 @@ name = input('이름 입력 :') # naru 입력
 print(name)
 naru
 ```
+<br>
 <br>
 
 ## 변수 란
@@ -102,10 +105,11 @@ type(x)
 id(x)
 1715307413744
 ```
+<br>
+<br>
 
 ## 식별자
 객체 (변수, 함수, 모듈 등) 를 식별하는데 사용하는 이름
-<br>
 <br>
 
 ### 규칙
@@ -119,6 +123,7 @@ id(x)
 import keyword
 print(keyword.kwlist)
 ```
+<br>
 <br>
 
 ## 자료형 이란
@@ -142,6 +147,7 @@ print(keyword.kwlist)
 <br>
 
 ## 수치형
+<br>
 
 ### 정수 (int)
 모든 정수 타입은 int 이며 오버플로우 (데이터 타입별로 사용할 수 있는 메모리 크기를 넘어서는 것) 가 발생하지 않음
@@ -168,6 +174,7 @@ False
 ```
 
 floating point rounding error : 컴퓨터에서 소수점 연산은 정확하게 할 수 없기에 근삿값으로 대체되고 이로인해 발생하는 문제
+<br>
 
 ### 복소수 (complex)
 실수부와 허수부로 구성
@@ -177,6 +184,8 @@ x = 1+2j
 type(a)
 <class 'complex'>
 ```
+<br>
+<br>
 
 ## 불린 (boolean)
 True, False 값을 가진 타입 (True 는 1, False 는 0 에 해당)
@@ -186,6 +195,7 @@ True, False 값을 가진 타입 (True 는 1, False 는 0 에 해당)
 <br>
 
 ## 연산자 (operator)
+<br>
 
 ### 산술 연산자
 사칙연산 및 수식 계산
@@ -238,6 +248,7 @@ True, False 값을 가진 타입 (True 는 1, False 는 0 에 해당)
 |a and b|a 와 b 모두 True 면 True|
 |a or b|a 또는 b 중 하나라도 True 면 True|
 |not a|True 를 False 로, False 를 True로 |
+<br>
 <br>
 
 ## 컨테이너 란
