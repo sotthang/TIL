@@ -58,6 +58,25 @@ Ex)
     - module name 은 짧게 소문자로 사용 등
 <br>
 
+## 주석
+코드에 대한 설명으로 코드에 반영되지 않음
+<br>
+# 로 주석 처리
+```python
+name = naru
+# 이름 변수 할당
+```
+<br>
+
+## 입출력
+input, print 로 입출력 가능
+```python
+name = input('이름 입력 :') # naru 입력
+print(name)
+naru
+```
+<br>
+
 ## 변수 란
 컴퓨터 메모리에 저장되어 있는 객체를 참조하기 위해 사용되는 것
 <br>
