@@ -17,6 +17,7 @@
 |1월 2일|[10869 사칙연산](https://www.acmicpc.net/problem/10869)|[10869_사칙연산.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/10869_%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0.py)|
 |1월 2일|[10926 ??!](https://www.acmicpc.net/problem/10926)|[10926_??!.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/10926_%3F%3F!.py)|
 |1월 2일|[18108 1998년생인 내가 태국에서는 2541년생?!](https://www.acmicpc.net/problem/18108)|[18108_1998년생인 내가 태국에서는 2541년생?!.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/18108_1998%EB%85%84%EC%83%9D%EC%9D%B8%20%EB%82%B4%EA%B0%80%20%ED%83%9C%EA%B5%AD%EC%97%90%EC%84%9C%EB%8A%94%202541%EB%85%84%EC%83%9D%3F!.py.py)|
+|1월 2일|[3003 킹, 퀸, 룩, 비숍, 나이트, 폰](https://www.acmicpc.net/problem/3003)|[3003_킹, 퀸, 룩, 비숍, 나이트, 폰.py](https://github.com/sotthang/TIL/blob/master/coding_test_study/%EB%B0%B1%EC%A4%80/10926_%3F%3F!.py)|
 ||||
 
 </details>
