@@ -11,5 +11,8 @@
 - git <br>
 [git 이란](https://github.com/sotthang/TIL/blob/master/git/git.md)
 
+- python <br>
+[python](https://github.com/sotthang/TIL/tree/master/python)
+
 - coding test study <br>
 [코딩테스트 연습](https://github.com/sotthang/coding_study)
