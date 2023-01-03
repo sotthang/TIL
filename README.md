@@ -12,4 +12,4 @@
 [git 이란](https://github.com/sotthang/TIL/blob/master/git/git.md)
 
 - coding test study <br>
-[코딩테스트 연습](https://github.com/sotthang/TIL/tree/master/coding_test_study)
+[코딩테스트 연습](https://github.com/sotthang/coding_study)
