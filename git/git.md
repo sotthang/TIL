@@ -1,25 +1,25 @@
 # git
 
 ## git 이란
+
 분산형 버전 관리 시스템(DVCS) 으로 코드의 버전을 관리하는 도구이다.
-<br>
-<br>
 
 ### 흐름
-![](image_git_flow.png)
+
+![git_flow](image_git_flow.png)
 
 working directory : 현재 작업하고 있는 프로젝트의 directory
-<br>
+
 staging area : commit 을 하기 위해 git add 명령어로 추가한 파일들이 있는 area
-<br>
 
 git 은 파일을 modified, staged, committed 로 관리
+
 - modified : 파일이 수정된 상태
 - staged : 수정할 파일을 커밋할 것이라고 표시한 상태
 - committed : 커밋 된 상태
-<br>
 
 ### 장점
+
 - 오프라인 작업이 가능하다. TFS 등의 기존 중앙집중형 형상관리 툴은 오프라인 작업을 아예 지원하지 않거나, 매우 제한적으로만 지원하였다. 본인이 특정 파일을 체크아웃했다는 사실이 실시간으로 서버에 드러나야 하기 때문이다. 온라인 상태에서 체크아웃한 파일은 오프라인 상태에서도 계속 작업할 수 있는 경우도 있으나, 이 경우에는 추가적인 형상관리가 안된다. git는 저장소를 일단 로컬에 복제하고, 로컬 저장소에 있는 히스토리도 그대로 유지되므로, 서버에서 새 자료를 받아올 수 없을 뿐이지 이외에는 오프라인 상태에서도 대부분의 형상관리 기능을 이용할 수 있다. 일종의 로컬 서버로 작용하는 셈.
 - 속도가 빠르다. 각각의 개발자들이 모두 분산처리 서버의 주인이 되는 셈이므로 서버가 직접 해야 될 일들이 많이 줄어든다.
 - 일시적인 서버 장애가 있어도 개발을 계속할 수 있다. 로컬 저장소를 이용하면 되기 때문.
@@ -29,9 +29,9 @@ git 은 파일을 modified, staged, committed 로 관리
 - 스테이징을 지원한다. 단순히 커밋되지 않은 로컬 변동사항을 얘기하는 것이 아니고, 아예 커밋하기 전에 사용해야 하는 스테이징 단계가 따로 있다. 물론 이를 사용하지 않고 다른 형상관리 도구처럼 바로 커밋하는 식으로 사용할 수도 있다.
 - 직접 호스팅을 할 경우 상업용 용도로도 무료로 이용 가능한 방법이 존재한다.
 - 수많은 개발자용 툴이 Git을 자체 지원하거나, Git용 플러그인이 있다. 또한 관련 툴킷 범위도 넓어, 초보자를 위한 GUI부터 전문자용 Diff툴까지 Git사용에 도움이 되는 툴이 많다. 또한 libgit2 등을 이용하면 원하는 언어로 Git을 활용하는 프로그램을 직접 만들 수도 있다.
-<br>
 
 ### 단점
+
 - 기존 형상관리 도구에 비해 덜 직관적이고 배우기 어렵다. 특히 중앙 집중형 형상관리 도구에 익숙한 사람일수록 귀찮고 어려워지는데, 용어도 컨셉트도 처리과정도 전혀 다르기 때문. 로컬 머신을 작업공간, 서버를 저장공간으로 생각하면 더 이상 복잡한 개념이 필요 없이 체크아웃 후 파일을 수정하고 다시 커밋하기만 하면 되는 중앙집중형 도구에 비해 git는 설계적으로 작업 디렉토리 - 스테이징 공간 - 로컬 저장소 - 원격 저장소 라는 다층구조를 가지고 있으며, 각각의 맡은 역할과 다른 계층과의 상호작용 방식이 단순 반복이 아니라 훨씬 복잡하게 연결된다. 게다가 이들 각각이 모두 실제 파일이 있는 공간을 의미하는 것이 아니라 작업 내용이 관리되는 개념적인 가상 공간과 실제 물리적 저장소가 섞여 있어 혼동을 유발한다.
 - 커밋, 푸시, 풀, 머지, 페치 등 영어 단어상으로는 비슷비슷하지만 구체적인 역할과 의미에 차이가 있는 수많은 용어들이 존재하며 기존의 지식이 이 새로운 컨셉트를 이용하는 데에 크게 방해가 된다. 또한 처음 배우는 경우 어디까지가 서버에 영향을 미치는 행위이고 어디까지가 로컬에서 안전하게 할 수 있는 일인지 명확하게 이해하기가 어려워 명령어 하나하나에 벌벌 떨게 된다. 서버에 있는 자료와 로컬의 자료를 비교하여 커밋 후에 무슨 변화가 일어나는지 미리 명확하게 알 수 있는 기존 형상관리에 비하면 확실히 덜 직관적이다. 바로 이 문제 때문에 기존 형상관리 도구를 계속 사용하는 경우도 많다.
 - 이 때문에 git을 사용하는 유형은 '확실하게 파악한 기능의 커맨드 조합을 안전하게 계속 반복하며 작업하는' 콘솔 명령어 파와, GUI 프로그램에서 규격화하여 제공하는 기능을 맡기고 사용하는 서드파티 프로그램 파로 크게 나뉜다. 둘 모두 결국에는 자신이 충분히 믿을 수 있을 정도로 동작을 파악한 후, 그 기능을 반복적으로 사용하는 경우가 많다.
@@ -41,10 +41,10 @@ git 은 파일을 modified, staged, committed 로 관리
 - push를 했다 해서 커밋 히스토리가 영원히 안전하게 저장된다고 장담할 수 없다. 중앙 집중형 형상관리에서는 일단 체크인을 하고 나면 서버에 문제가 생기지 않는 한에는 항상 안전하고 언제든 과거 기록을 볼 수 있으나, git에서는 push를 한 내용이라 하더라도 해당 브랜치가 다른 브랜치에 병합되기 전에 삭제돼버리면 나중에 해당 내용에 접근할 수 없다.
 - 커밋 ID가 긴 16진수 숫자(SHA-1 해시값)라 기억하기가 어렵고 항상 복사-붙여넣기를 해야 한다. 단순한 10진수 숫자로만 구성되어 있는 TFS 등에 비해 복잡한 것은 사실이다.
 - 서버에 저장소를 두고 로컬 머신에서는 작업중인 프로젝트만을 두는 것이 설계개념상 불가능하다. 원격 저장소와 로컬 저장소를 모두 요구하기 때문에 저장소 전체를 받아서 작업해야 된다는 부분도 원하지 않는 경우 단점이다. 작업 패턴이 git에 맞추어져 있다면 로컬 저장소 작업 공간 자체를 '원래 없었던 용량' 으로 생각하고 branch 등으로 늘어나는 체감 용량이 작다고 생각할 수 있지만, 당연하게도 저장소 용량은 작업이 무엇이냐에 따라 무한정 커질 수 있으며, 이 공간이 로컬 저장소와 서버에 1:1 비율로 동시에 요구되게 된다. 기존 형상관리 툴이 원하는 파일 하나만 덜렁 받아서 작업하고 체크인할 수도 있는 것에 비하면 구조적으로 로컬과 원격, 총 2배수 공간을 사용하도록 설계되어 있다.
-<br>
 
 ### 명령어
-```
+
+```text
 - git init : 로컬 저장소 생성
 - git add <파일명> : 특정 파일 / 폴더의 변경사항 추가
 - git commit -m '<커밋메시지>' : 커밋 (버전 기록)
@@ -64,74 +64,70 @@ git 은 파일을 modified, staged, committed 로 관리
 - git restore <파일명> : head commit 으로 복구
 - git restore --staged <파일명> : git add 로 stage 에 올라간 것을 취소
 ```
-<br>
 
 ### .gitignore
+
 프로젝트에서 버전 관리가 필요하지 않은 파일, 폴더 등을 관리할 수 있는 파일
-<br>
+
 이미 commit 된 파일은 gitignore 에 넣어도 ignore 가 안되기에 프로젝트 시작 전에 설정 (commit 된 파일 삭제하면 ignore 적용 가능)
-<br>
+
 ex) 비밀번호, 고객정보 등
-<br>
-https://github.com/github/gitignore
-<br>
-https://www.toptal.com/developers/gitignore
-<br>
+
+<https://github.com/github/gitignore>
+
+<https://www.toptal.com/developers/gitignore>
+
 에서 template 참고 가능
-<br>
-<br>
 
 ## branch
-독립적인 작업을 환경을 만들고 관리하기 위한 것
-<br>
 
-### 명령어
-```
+독립적인 작업을 환경을 만들고 관리하기 위한 것
+
+### branch 명령어
+
+```text
 - git branch <branch name> : 브랜치 생성
 - git checkout <branch name> or git switch <branch name>: 브랜치 이동
 - git checkout -b <branch name> : 브랜치 생성 후 이동
 - git branch : 브랜치 목록 출력
 - git branch -d <branch name> : 브랜치 삭제
 ```
-<br>
 
 ### merge
+
 branch 에서 작업 한 이력을 합치기 위한 명령어
 
 merge 시
+
 1. 작업한 파일이 중복되지 않는다면 conflict 없이 merge 성공
 2. 작업한 파일이 중복된다면 conflict 발생, 중복 파일 확인 후 수정 후 직접 commit
-<br>
 
-### 명령어
-```
+### merge 명령어
+
+```text
 - git merge <branch name> : 현재 head 와 branch name 을 merge
 ```
-<br>
 
 ### fast forward merge
+
 master (main) 에서 변경된 사항이 없을 때 merge 하는 경우
-<br>
 
 ### merge commit
+
 master (main) 에서 변경된 사항이 있는 경우
-<br>
-<br>
 
 ## Fork 란
+
 다른 사람의 저장소의 repository 를 내 원격저장소로 가져오는 것
 (clone 은 내 로컬저장소로 가져오는 것)
-<br>
-<br>
 
 ## Pull Request 란
+
 다른 사람의 저장소에 내가 작업한 코드를 반영해달라고 요청하는 것
-<br>
-<br>
 
 ## git flow
+
 git 사용 시 협업을 위한 방법론
-<br>
 
 |branch|주요특징|
 |------|------|
@@ -140,28 +136,25 @@ git 사용 시 협업을 위한 방법론
 |feature branches|기능별 개발 branch, 기능 반영 또는 drop 되면 branch 삭제|
 |release branches|개발 완료 후 QA/test 로 얻어진 minor bug fix 반영|
 |hotfixes|긴급하게 반영해야하는 bug fix|
-<br>
 
 ### github flow 기본 원칙
+
 1. master branch 는 반드시 배포 가능한 상태여야 한다
 2. feature branch 는 기능의 의도를 알 수 있도록 작성한다
 3. commit message 는 매우 중요하므로 명확하게 작성한다
 4. Pull Request 를 통해 협업한다
 5. 변경사항을 반영하고 싶다면 master branch 에 merge 한다
-<br>
 
 ### github flow model
+
 1. Shared Repository Model
     - 동일한 저장소를 공유 (collaborator 등록 필수)
     - master + feature branch 로 작업
 2. Fork & Pull Model
     - fork 를 통해 본인 저장소에서 작업 (collaborator 등록 필요 없음)
     - 오픈소스 참여 과정에서 사용되는 방식
-<br>
-<br>
 
 ### 참고하기 좋은 블로그
-- https://backlog.com/git-tutorial/kr/intro/intro1_1.html
-- https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%B2%84%EC%A0%84-%EA%B4%80%EB%A6%AC%EB%9E%80%3F
-<br>
-<br>
+
+- <https://backlog.com/git-tutorial/kr/intro/intro1_1.html>
+- <https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%B2%84%EC%A0%84-%EA%B4%80%EB%A6%AC%EB%9E%80%3F>

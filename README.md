@@ -2,17 +2,17 @@
 
 개발자가 되기 위해 공부한 것을 기록하는 곳
 
-- markdown <br>
+- markdown  
 [markdown 이란](https://github.com/sotthang/TIL/blob/master/markdown/markdown.md)
 
-- cli <br>
+- cli  
 [cli 란](https://github.com/sotthang/TIL/blob/master/cli/cli.md)
 
-- git <br>
+- git  
 [git 이란](https://github.com/sotthang/TIL/blob/master/git/git.md)
 
-- python <br>
+- python  
 [python](https://github.com/sotthang/TIL/tree/master/python)
 
-- coding test study <br>
+- coding test study  
 [코딩테스트 연습](https://github.com/sotthang/coding_study)
