@@ -7,3 +7,5 @@
 - [5. for 문](https://github.com/sotthang/TIL/blob/master/python/5.for.md)
 - [6. while 문](https://github.com/sotthang/TIL/blob/master/python/6.while.md)
 - [7. 내장함수](https://github.com/sotthang/TIL/blob/master/python/7.%EB%82%B4%EC%9E%A5%ED%95%A8%EC%88%98.md)
+- [8. dictionary (딕셔너리)](https://github.com/sotthang/TIL/blob/master/python/8.dictionary.md)
+- [9. module (모듈)](https://github.com/sotthang/TIL/blob/master/python/9.module.md)
