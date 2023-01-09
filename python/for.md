@@ -12,8 +12,13 @@ for 변수 in iterable:
 for 변수 in iterable:
     코드
     코드
+    if 조건:
+        break
 else:
     코드
+
+# for 문에서 break 가 실행 되면 else 코드는 실행 안됨
+# break 가 실행 안되면 else 코드 실행됨
 ```
 
 ## for 문 iterable
