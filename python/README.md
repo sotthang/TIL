@@ -1,6 +1,7 @@
 # Python
 
 - [1. python](https://github.com/sotthang/TIL/blob/master/python/python.md)
+    - [1.1 namespace](https://github.com/sotthang/TIL/blob/master/python/namespace.md)
 - [2. string (문자열)](https://github.com/sotthang/TIL/blob/master/python/string.md)
 - [3. list (리스트)](https://github.com/sotthang/TIL/blob/master/python/list.md)
 - [4. if 문](https://github.com/sotthang/TIL/blob/master/python/if.md)
