@@ -6,7 +6,7 @@
 - [4. if 문](https://github.com/sotthang/TIL/blob/master/python/if.md)
 - [5. for 문](https://github.com/sotthang/TIL/blob/master/python/for.md)
 - [6. while 문](https://github.com/sotthang/TIL/blob/master/python/while.md)
-- [7. while 문](https://github.com/sotthang/TIL/blob/master/python/while.md)
+- [7. 함수](https://github.com/sotthang/TIL/blob/master/python/%ED%95%A8%EC%88%98.md)
 - [8. 내장함수](https://github.com/sotthang/TIL/blob/master/python/%EB%82%B4%EC%9E%A5%ED%95%A8%EC%88%98.md)
 - [9. dictionary (딕셔너리)](https://github.com/sotthang/TIL/blob/master/python/dictionary.md)
 - [10. tuple (튜플)](https://github.com/sotthang/TIL/blob/master/python/tuple.md)
