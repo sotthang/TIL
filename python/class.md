@@ -34,9 +34,5 @@ class testtest(test):
 ```text
 self 는 객체 a 를 자동으로 전달해줌
 
-__init__ method 는 생성자 메소드로 객체가 생성될 때 자동으로 호출됨
-
-__del__ method 는 소멸자 메소드로 객체가 소멸될 때 자동으로 호출됨
-
 testest 클래스는 test 클래스를 상속받아 test 기능을 그대로 사용 가능
 ```
