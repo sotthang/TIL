@@ -1,7 +1,7 @@
 # Python
 
 - [1. python](https://github.com/sotthang/TIL/blob/master/python/python.md)
-    - [1.1 namespace](https://github.com/sotthang/TIL/blob/master/python/namespace.md)
+  - [1.1 namespace](https://github.com/sotthang/TIL/blob/master/python/namespace.md)
 - [2. string (문자열)](https://github.com/sotthang/TIL/blob/master/python/string.md)
 - [3. list (리스트)](https://github.com/sotthang/TIL/blob/master/python/list.md)
 - [4. if 문](https://github.com/sotthang/TIL/blob/master/python/if.md)
@@ -14,3 +14,4 @@
 - [11. set (셋)](https://github.com/sotthang/TIL/blob/master/python/set.md)
 - [12. module (모듈)](https://github.com/sotthang/TIL/blob/master/python/module.md)
 - [13. file](https://github.com/sotthang/TIL/blob/master/python/file.md)
+- [14. class](https://github.com/sotthang/TIL/blob/master/python/class.md)
