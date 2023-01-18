@@ -15,5 +15,8 @@
 - [12. set (셋)](https://github.com/sotthang/TIL/blob/master/python/set.md)
 - [13. module (모듈)](https://github.com/sotthang/TIL/blob/master/python/module.md)
   - [13.1 requests](https://github.com/sotthang/TIL/blob/master/python/library_requests.md)
+  - [13.2 itertools](https://github.com/sotthang/TIL/blob/master/python/itertools.md)
 - [14. file](https://github.com/sotthang/TIL/blob/master/python/file.md)
 - [15. class](https://github.com/sotthang/TIL/blob/master/python/class.md)
+- [16. iterable](https://github.com/sotthang/TIL/blob/master/python/iterable.md)
+- [17. iterator](https://github.com/sotthang/TIL/blob/master/python/iterator.md)
