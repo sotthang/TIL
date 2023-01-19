@@ -20,3 +20,4 @@
 - [15. class](https://github.com/sotthang/TIL/blob/master/python/class.md)
 - [16. iterable](https://github.com/sotthang/TIL/blob/master/python/iterable.md)
 - [17. iterator](https://github.com/sotthang/TIL/blob/master/python/iterator.md)
+- [18. Complexity of Python Operations](https://github.com/sotthang/TIL/blob/master/python/complexity_of_python_operations.md)
