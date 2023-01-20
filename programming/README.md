@@ -13,4 +13,5 @@
 - [algorithm](https://github.com/sotthang/TIL/blob/master/programming/algorithm.md)
   - [edgecase](https://github.com/sotthang/TIL/blob/master/programming/edgecase.md)
   - [재귀함수](https://github.com/sotthang/TIL/blob/master/programming/%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98.md)
+- [data structure](https://github.com/sotthang/TIL/blob/master/programming/data_structure.md)
   - [스택과 큐](https://github.com/sotthang/TIL/blob/master/programming/stack_queue.md)
