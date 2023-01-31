@@ -4,6 +4,7 @@
   - [1.1 namespace](https://github.com/sotthang/TIL/blob/master/python/namespace.md)
 - [2. string (문자열)](https://github.com/sotthang/TIL/blob/master/python/string.md)
 - [3. list (리스트)](https://github.com/sotthang/TIL/blob/master/python/list.md)
+  - [3.1 2차원 리스트](https://github.com/sotthang/TIL/blob/master/python/two_dimensional_list.md)
 - [4. if 문](https://github.com/sotthang/TIL/blob/master/python/if.md)
 - [5. for 문](https://github.com/sotthang/TIL/blob/master/python/for.md)
 - [6. while 문](https://github.com/sotthang/TIL/blob/master/python/while.md)
