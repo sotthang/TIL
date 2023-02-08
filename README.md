@@ -12,4 +12,6 @@
 
 - [python](https://github.com/sotthang/TIL/tree/master/python)
 
+- [DB](https://github.com/sotthang/TIL/tree/master/db)
+
 - [코딩테스트 연습](https://github.com/sotthang/coding_study)
