@@ -23,3 +23,7 @@
 ### table 간의 관계
 
 ![rdb_relation](rdb_relation.png)
+
+- [SQL](https://github.com/sotthang/TIL/blob/master/db/sql.md)
+  - [SELECT 1](https://github.com/sotthang/TIL/blob/master/db/sql_select_1.md)
+  - [SELECT 2](https://github.com/sotthang/TIL/blob/master/db/sql_select_2.md)
