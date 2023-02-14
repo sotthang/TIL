@@ -31,7 +31,3 @@ UPDATE mysql_test_a SET title=REPLACE(title, 'blue_jeans', 'jeans');
 |2|jeans|50000|20|
 |3|skirt|60000|10|
 |4|short_t_shirt|15000|10|
-
-
-
-
