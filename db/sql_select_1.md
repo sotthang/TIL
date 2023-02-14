@@ -1,47 +1,9 @@
 # SQL SELECT
 
-## Database 생성
-
-```sql
-CREATE DATABASE DB_test
-```
-
-## Database 접속
-
-```sql
-USE DB_test;
-```
-
-## Database 삭제
-
-```sql
-DROP DATABASE DB_test
-```
-
-## Table 생성
-
-```sql
-CREATE TABLE mysql_test_a ( 
-id INT(6) NOT NULL, 
-title VARCHAR(30) NOT NULL, 
-price INT(11) NOT NULL,
-amount INT(11) NOT NULL
-); 
-```
-
-## Table Data 추가
-
-```sql
-INSERT INTO mysql_test_a (`id`, `title`, `price`, `amount`) VALUES ('1', 'short_pants', '30000', '5');
-INSERT INTO mysql_test_a (`id`, `title`, `price`, `amount`) VALUES ('2', 'blue_jeans', '50000', '20'); 
-INSERT INTO mysql_test_a (`id`, `title`, `price`, `amount`) VALUES ('3', 'skirt', '60000', '10'); 
-INSERT INTO mysql_test_a (`id`, `title`, `price`, `amount`) VALUES ('4', 'short_t_shirt', '15000', '10'); 
-```
-
 ## Table Data 전체 확인
 
 ```sql
-SELECT * FROM test
+SELECT * FROM mysql_test_a
 ```
 
 |id|title|price|amount|
@@ -54,7 +16,7 @@ SELECT * FROM test
 ## Table Data 특정 column 확인
 
 ```sql
-SELECT title, price FROM test
+SELECT title, price FROM mysql_test_a
 ```
 
 |title|price|
@@ -160,32 +122,6 @@ SELECT title, price/amount FROM mysql_test_a;
 |skirt|6000.0000|
 |short_t_shirt|1500.0000|
 
-## Table Data 변경
-
-```sql
-UPDATE mysql_test_a SET amount='4' WHERE id='1';
-SELECT * FROM mysql_test_a;
-```
-
-|id|title|price|amount|
-|---|----|-----|------|
-|1|short_pants|30000|4|
-|2|blue_jeans|50000|20|
-|3|skirt|60000|10|
-|4|short_t_shirt|15000|10|
-
-## Table Data 삭제
-
-```sql
-DELETE FROM mysql_test_a where id=1;
-```
-
-|id|title|price|amount|
-|---|----|-----|------|
-|2|blue_jeans|50000|20|
-|3|skirt|60000|10|
-|4|short_t_shirt|15000|10|
-
 ## Table Column 확인
 
 ```sql
@@ -198,9 +134,3 @@ DESC mysql_test_a;
 |title|varchar(30)|NO||||
 |price|int|NO||||
 |amount|int|NO||||
-
-## Table 삭제
-
-```sql
-DROP TABLE mysql_test_a;
-```

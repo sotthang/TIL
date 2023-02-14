@@ -25,5 +25,11 @@
 ![rdb_relation](rdb_relation.png)
 
 - [SQL](https://github.com/sotthang/TIL/blob/master/db/sql.md)
+  - [CREATE](https://github.com/sotthang/TIL/blob/master/db/sql_create.md)
+  - [DROP](https://github.com/sotthang/TIL/blob/master/db/sql_drop.md)
+  - [INSERT](https://github.com/sotthang/TIL/blob/master/db/sql_insert.md)
   - [SELECT 1](https://github.com/sotthang/TIL/blob/master/db/sql_select_1.md)
   - [SELECT 2](https://github.com/sotthang/TIL/blob/master/db/sql_select_2.md)
+  - [ALTER](https://github.com/sotthang/TIL/blob/master/db/sql_alter.md)
+  - [UPDATE](https://github.com/sotthang/TIL/blob/master/db/sql_update.md)
+  - [DELETE](https://github.com/sotthang/TIL/blob/master/db/sql_delete.md)
