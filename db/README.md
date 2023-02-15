@@ -33,3 +33,4 @@
   - [ALTER](https://github.com/sotthang/TIL/blob/master/db/sql_alter.md)
   - [UPDATE](https://github.com/sotthang/TIL/blob/master/db/sql_update.md)
   - [DELETE](https://github.com/sotthang/TIL/blob/master/db/sql_delete.md)
+  - [JOIN](https://github.com/sotthang/TIL/blob/master/db/sql_join.md)
