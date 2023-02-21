@@ -37,3 +37,5 @@
   - [Subquery](https://github.com/sotthang/TIL/blob/master/db/sql_subquery.md)
   - [TRANSACTION](https://github.com/sotthang/TIL/blob/master/db/sql_transaction.md)
   - [TRIGGER](https://github.com/sotthang/TIL/blob/master/db/sql_trigger.md)
+  - [Normalization](https://github.com/sotthang/TIL/blob/master/db/sql_normalization.md)
+  - [ERD](https://github.com/sotthang/TIL/blob/master/db/sql_erd.md)
