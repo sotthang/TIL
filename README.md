@@ -14,4 +14,6 @@
 
 - [DB](https://github.com/sotthang/TIL/tree/master/db)
 
+- [WEB](https://github.com/sotthang/TIL/tree/master/web)
+
 - [코딩테스트 연습](https://github.com/sotthang/coding_study)
