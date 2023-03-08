@@ -267,3 +267,53 @@ https://getbootstrap.com/docs/5.3/utilities/spacing/#notation
 ```
 
 ![bootstrap9](bootstrap9.png)
+
+### Grid breakpoint
+
+웹페이지를 다양한 화면 크기에서 알맞게 배치하기 위한 포인트
+
+||xs (<576px)|sm (>=576px)|md (>=768px)|lg (>=992px)|xl (>=1200px)|xxl (>=1400)|
+|-|-|-|-|-|-|-|
+|container (max-width)|None (auto)|540px|720px|960px|1140px|1320px|
+|Class prefix|.col-|.col-sm-|.col-md-|.col-lg-|.col-xl-|.col-xxl-|
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      .box {
+        border: 1px solid black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="text-center">breakpoint</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-2 col-lg-3 col-xl-4">
+          <div class="box">col</div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-8 col-lg-3 col-xl-4">
+          <div class="box">col</div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-2 col-lg-3 col-xl-4">
+          <div class="box">col</div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-12 col-lg-3 col-xl-12">
+          <div class="box">col</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
+```
+
+![bootstrap10](bootstrap10.png)
+
