@@ -230,3 +230,43 @@ element.createElement() : 생성
 element.appendChild() : 추가
 
 element.removeChild() : 삭제
+
+### 함수
+
+#### 선언식
+
+```javascript
+function funcName () {
+  statement
+}
+```
+
+#### 표현식
+
+```javascript
+const funcName = function () {
+  statement
+}
+```
+
+#### 기본 함수 매개변수
+
+```javascript
+const greeting = function (name = 'Anonymous') {
+  return `Hi ${name}`
+}
+
+greeting()  // Hi Anonymous
+```
+
+#### 화살표 함수 표현식
+
+```javascript
+const arrow1 = function (name) {
+  return 'hello'
+}
+
+const arrow2 = (name) => { return 'hello' }
+
+// 같은 코드
+```
