@@ -270,3 +270,68 @@ const arrow2 = (name) => { return 'hello' }
 
 // 같은 코드
 ```
+
+### for
+
+```javascript
+for (var i = 1; i < 5; i++) {
+  document.write(i + "<br>")
+}
+
+>>> 1
+    2
+    3
+    4
+```
+
+### for in
+
+```javascript
+var arr = [3, 4, 5]
+
+for (var i = 0; i < arr.length; i++) {
+  document.write(i + " ")
+}
+
+document.write("<br>")
+
+for (var i in arr) {
+  document.write(i + " ")
+}
+
+>>> 0 1 2
+    0 1 2
+```
+
+```javascript
+var obj = {
+  name : "java",
+  age : 23
+}
+
+for (var i in obj) {
+  document.write(i + "<br>")
+}
+
+>>> name
+    age
+```
+
+### for of
+
+```javascript
+var arr = [3, 4, 5]
+
+for (var i = 0; i < arr.length; i++) {
+  document.write(arr[i] + " ")
+}
+
+document.write("<br>")
+
+for (var value of arr) {
+  document.write(value + " ")
+}
+
+>>> 3 4 5
+    3 4 5
+```
