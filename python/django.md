@@ -120,3 +120,96 @@ Git root 디렉토리에 .gitignore 파일 생성
 - *.[확장자] : 특정 확장자 모두 무시
 
 https://www.toptal.com/developers/gitignore/ 같은 사이트에서 자주 사용하는 환경의 코드 생성 가능
+
+## Django App
+
+![django3](django3.png)
+
+Django Project : App 의 집합
+
+Django App : 독립적으로 작동하는 기능 단위의 모듈
+
+### App 생성
+
+python manage.py startapp 앱이름
+
+```bash
+python manage.py startapp articles
+```
+
+### App 등록
+
+반드시 App 생성 후 등록
+
+```python
+# Project - settings.py
+
+INSTALLED_APPS = [
+    'articles',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
+
+## 구조
+
+### Project 구조
+
+![django4](django4.png)
+
+- \_\_init\_\_.py : 해당 폴더를 패키지로 인식하도록 설정
+- asgi.py : 비동기식 웹 서버와의 연결 관련 설정
+- wsgi.py : 웹 서버와의 연결 관련 설정
+- manage.py : Django 와 다양한 방법으로 상호작용하는 커맨드라인 유틸리티
+
+### App 구조
+
+![django5](django5.png)
+
+- admin.py : 관리자용 페이지 설정
+- models.py : DB 와 관련된 Model 정의 (MTV 의 M)
+- views.py : HTTP 요청 처리 및 응답 반환 (MTV 의 V)
+- apps.py : app 정보가 작성되는 곳
+- tests.py : 테스트 코드 작성하는 곳
+
+## 요청 및 응답
+
+### URL
+
+```python
+# Proejct - urls.py
+
+from django.contrib import admin
+from django.urls import path
+from articles import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('articles/', views.index),
+]
+```
+
+http://127.0.0.1/articles/ 로 요청이 오면 views 모듈의 index 함수를 호출
+
+### View
+
+```python
+# App - views.py
+
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'articles/index.html')
+```
+
+index 함수가 호출되면 articles 폴더에 있는 index.html 을 렌더링
+
+### Templates
+
+Django 에서 app / templates 폴더까지 기본 경로로 인식하기에 views.py 에서 'articles/index.html' 로 작성
+
+![django6](django6.png)
