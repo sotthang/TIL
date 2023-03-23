@@ -24,3 +24,4 @@
 - [18. Complexity of Python Operations](https://github.com/sotthang/TIL/blob/master/python/complexity_of_python_operations.md)
 - [19. Django](https://github.com/sotthang/TIL/blob/master/python/django.md)
   - [19.1 Django Template System](https://github.com/sotthang/TIL/blob/master/python/django_template_system.md)
+  - [19.2 Django URL](https://github.com/sotthang/TIL/blob/master/python/django_url.md)
