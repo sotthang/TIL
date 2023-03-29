@@ -88,6 +88,180 @@ Django shell : django 안에서 실행되는 python shell
 <QuerySet [<Article: Article object (2)>]>
 ```
 
+## ORM Update
+
+```bash
+>>> article = Article.objects.get(pk=1)
+>>> article.title = 'change'
+>>> article.save()
+>>> article.title
+'change'
+```
+
+## ORM Delete
+
+```bash
+>>> article = Article.objects.get(pk=1)
+>>> article.delete()
+(1, {' articles.Article ' : 1})
+
+>>> Article.objects.get(pk=1)
+DoesNotExist: Article matching query does not exist.
+```
+
+## ORM Read with view
+
+URL 파일 분리
+
+```python
+# project crud/urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns =[
+    path('admin/', admin.site.urls),
+    path('articles', include('articles.urls')),
+]
+```
+
+```python
+# articles/url.py
+
+from django.urls import path
+from . import views
+
+app_name = 'articles'
+urlpatterns =[
+    path('', views.index, name='index'),
+]
+```
+
+### 전체 게시글 조회
+
+```python
+# articles/views.py
+
+from .models import Article
+
+def index(request):
+    articles = Article.objects.all()
+    context = {
+        'articles': articles,
+    }
+    return render(request, 'articles/index.html', context)
+```
+
+```html
+<!-- articles/index.html -->
+
+<h1>Articles</h1>
+<hr>
+{% for article in articles %}
+  <p>글 번호: {{ article.pk }}</p>
+  <p>글 제목: {{ article.title }}</p>
+  <p>글 내용: {{ article.content }}</p>
+  <hr>
+{% endfor %}
+```
+
+![djang_orm2](django_orm2.png)
+
+### 단일 게시글 조회
+
+```python
+# articles/urls.py
+
+urlpatterns =[
+    path('', views.index, name='index'),
+    path('<int:pk>/', views.detail, name='detail'),
+]
+```
+
+```python
+# articles/views.py
+
+def detail(request, pk):
+    article = Article.objects.get(pk=pk)
+    context = {
+        'article': article,
+    }
+    return render(request, 'articles/detail.html', context)
+```
+
+```html
+<h2>DETAIL</h2>
+<h3>{{ article.pk }} 번째 글 </h3>
+<hr>
+<p>제목: {{ article.title }}</p>
+<p>내용: {{ article.content }}</p>
+<p>작성 시각: {{ article.created_at }}</p>
+<p>수정 시각: {{ article.updated_at }}</p>
+<hr>
+<a href="{% url 'articles:index' %}">[back]</a>
+```
+
+![djang_orm3](django_orm3.png)
+
+## ORM Create with view
+
+```python
+# articles/urls.py
+
+urlpatterns =[
+    path('', views.index, name='index'),
+    path('<int:pk>/', views.detail, name='detail'),
+    path('new/', views.new, name='new'),
+    path('create/', views.create, name='create'),
+]
+```
+
+```python
+# articles/views.py
+
+def new(request):
+    return render(request, 'articles/new.html')
+
+
+def create(request):
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+    
+    article = Article(title=title, content=content)
+    article.save()
+
+    return render(request, 'articles/create.html')
+```
+
+```html
+<!-- templates/articles/new.html -->
+
+<h1>NEW</h1>
+<form action="{% url 'articles:create' %}" method="GET">
+  <div>
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="title">
+  </div>
+  <div>
+    <label for="content">Content: </label>
+    <textarea name="content" id="content"></textarea>
+  </div>
+  <input type="submit">
+</form>
+<hr>
+<a href="{% url 'articles:index' %}">[back]</a>
+```
+
+![djang_orm4](django_orm4.png)
+
+```html
+<!-- templates/articles/create.html -->
+
+<h1>게시글이 문제없이 작성 되었습니다.</h1>
+```
+
+![djang_orm5](django_orm5.png)
+
 ## QuerySet reference
 
 https://docs.djangoproject.com/en/3.2/ref/models/querysets/
