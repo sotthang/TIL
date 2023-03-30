@@ -262,6 +262,132 @@ def create(request):
 
 ![djang_orm5](django_orm5.png)
 
+## ORM Delete with view
+
+```python
+# articles/urls.py
+
+urlpatterns =[
+    path('', views.index, name='index'),
+    path('<int:pk>/', views.detail, name='detail'),
+    path('new/', views.new, name='new'),
+    path('create/', views.create, name='create'),
+    path('<int:pk>/delete/', views.delete, name='delete'),
+]
+```
+
+```python
+# articles/views.py
+
+def delete(request, pk):
+    article = Article.objects.get(pk=pk)
+    article.delete()
+    return redirect('articles:index')
+```
+
+```html
+<!-- articles/detail.html -->
+
+<h2>DETAIL</h2>
+<form action="{% url 'articles:delete' article.pk %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="DELETE">
+</form>
+<a href="{% 'articles:index' %}">[back]</a>
+```
+
+## ORM Update with view
+
+```python
+# articles/urls.py
+
+urlpatterns =[
+    path('', views.index, name='index'),
+    path('<int:pk>/', views.detail, name='detail'),
+    path('new/', views.new, name='new'),
+    path('create/', views.create, name='create'),
+    path('<int:pk>/delete/', views.delete, name='delete'),
+    path('<int:pk>/edit/', views.edit, name='edit'),
+    path('<int:pk>/update/', views.update, name='update'),
+]
+```
+
+```python
+# articles/views.py
+
+def edit(request, pk):
+    article = Article.objects.get(pk=pk)
+    context = {
+        'article': article,
+    }
+    return render(request, 'articles/edit.html', context)
+
+
+def update(request, pk):
+    article = Article.objects.get(pk=pk)
+    article.title = request.POST.get('title')
+    article.content = request.POST.get('content')
+    article.save()
+    return redirect('articles:detail', article.pk)
+```
+
+<!-- articles/detail.html -->
+
+<h2>DETAIL</h2>
+<a href="{% url 'articles:edit' article.pk %}">EDIT</a><br>
+<form action="{% url 'articles:delete' article.pk %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="DELETE">
+</form>
+<a href="{% 'articles:index' %}">[back]</a>
+```
+
+```html
+<!-- articles/edit.html -->
+
+<h1>EDIT</h1>
+<form action="{% url 'articles:update' article.pk %}" method="POST">
+  {% csrf_token %}
+  <div>
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="title" value="{{ article.title }}">
+  </div>
+  <div>
+    <label for="content">content: </label>
+    <textarea name="content" id="content" value="{{ article.content }}"></textarea>
+  </div>
+  <input type="submit">
+</form>
+<hr>
+<a href="{% url 'articles:index' %}">[back]</a>
+```
+
+### Render vs Redirect
+
+render : template 호출
+redirect : url 호출 (인자에 작성된 주소로 다시 요청을 보냄, context 못넘겨줌)
+
+### GET vs Post
+
+- get : 데이터를 url 뒤에 붙여서 보냄
+  - ex) http://www.naver.com/index/?parameter=value
+- post : 데이터를 body 에 넣어서 보냄
+  - ex) body { "parameter":"value", ... }
+
+### CSRF (Cross Site Request Forgery)
+
+사이트 간 요청 위조
+
+웹사이트 취약점 공격의 하나로, 사용자가 자신의 의지와는 무관하게 공격자가 의도한 행위를 특정 웹사이트에 요청하게 하는 공격
+
+CSRF token : CSRF 방어 방법 중 하나
+
+1. 서버가 사용자 입력 데이터에 token 부여
+2. 매 요청마다 해당 token 을 포함시켜 전송
+3. 서버에서 요청 받을 때마다 token 이 유효한지 검증
+
+Django 에서 form 문 아래에 {% csrf_token %} 을 넣으면 사용 가능
+
 ## QuerySet reference
 
 https://docs.djangoproject.com/en/3.2/ref/models/querysets/
