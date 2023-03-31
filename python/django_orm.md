@@ -56,7 +56,7 @@ Django shell : django 안에서 실행되는 python shell
 'first'
 ```
 
-#### 두번쨰
+#### 두번째
 
 ```bash
 >>> article = Article(title='second', content='django~')
@@ -331,6 +331,7 @@ def update(request, pk):
     return redirect('articles:detail', article.pk)
 ```
 
+```html
 <!-- articles/detail.html -->
 
 <h2>DETAIL</h2>
@@ -365,6 +366,7 @@ def update(request, pk):
 ### Render vs Redirect
 
 render : template 호출
+
 redirect : url 호출 (인자에 작성된 주소로 다시 요청을 보냄, context 못넘겨줌)
 
 ### GET vs Post
