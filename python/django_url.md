@@ -61,7 +61,7 @@ To-be
 ![django_url2](django_url2.png)
 
 ```python
-# Proejct/urls.py
+# Project/urls.py
 
 from django.urls import path, include
 

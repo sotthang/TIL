@@ -27,3 +27,5 @@
   - [19.2 Django URL](https://github.com/sotthang/TIL/blob/master/python/django_url.md)
   - [19.3 Django Model](https://github.com/sotthang/TIL/blob/master/python/django_model.md)
   - [19.4 Django ORM](https://github.com/sotthang/TIL/blob/master/python/django_orm.md)
+  - [19.5 Django Form](https://github.com/sotthang/TIL/blob/master/python/django_form.md)
+  - [19.6 Django Handling HTTP Requests](https://github.com/sotthang/TIL/blob/master/python/django_handling_http_request.md)
