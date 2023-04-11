@@ -9,7 +9,7 @@ app/static
 ![django_static_files1](django_static_files1.png)
 
 ```html
-<!-- articles/inex.html -->
+<!-- articles/index.html -->
 
 {% load static %}
 
@@ -30,7 +30,7 @@ STATICFILES_DIRS = [
 ![django_static_files2](django_static_files2.png)
 
 ```html
-<!-- articles/inex.html -->
+<!-- articles/index.html -->
 
 {% load static %}
 
