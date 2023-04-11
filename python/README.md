@@ -32,3 +32,4 @@
   - [19.7 Django Authentication System](https://github.com/sotthang/TIL/blob/master/python/django_authentication_system.md)
   - [19.8 Django Static Files](https://github.com/sotthang/TIL/blob/master/python/django_static_files.md)
   - [19.9 Django Media Files](https://github.com/sotthang/TIL/blob/master/python/django_media_files.md)
+  - [19.10 Django Many to One Relationship](https://github.com/sotthang/TIL/blob/master/python/django_many_to_one_relationship.md)
