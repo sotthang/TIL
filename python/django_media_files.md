@@ -14,6 +14,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 ```
 
+```python
+# articles/models.py
+
+class Article(models.Model):
+    ...
+    image = models.ImageField(blank=True)
+    # image = models.ImageField(blank=True, upload_to='images/') 로 경로 설정 가능
+```
+
 ```cmd
 pip install pillow
 
@@ -34,15 +43,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     ...
 ] + static(setting.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-```
-
-```python
-# articles/models.py
-
-class Article(models.Model):
-    ...
-    image = models.ImageField(blank=True)
-    # image = models.ImageField(blank=True, upload_to='images/') 로 경로 설정 가능
 ```
 
 ```html
