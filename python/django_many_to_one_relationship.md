@@ -150,3 +150,160 @@ def comments_delete(request, article_pk, comment_pk):
   {% endfor %}
 </ul>
 ```
+
+## 작성자만 게시글 수정, 삭제 가능
+
+```python
+# articles/modles.py
+
+from django.conf import settings
+
+class Article(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    ...
+```
+
+```cmd
+python manage.py makemigrations
+<!-- 1 입력 후 엔터 두번 반복 -->
+python manage.py migrate
+```
+
+```python
+# articles/forms.py
+
+class ArticleForm(forms.ModleForm):
+    class Meta:
+        model = Article
+        fields = ('title', 'content',)
+```
+
+```python
+# articles/views.py
+
+@login_required
+def create(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.user = request.user
+            article.save()
+            return redirect('article:detail', article.pk)
+    else:
+        ...
+
+
+@login_required
+def update(request, pk):
+    article = Article.objects.get(pk=pk)
+    if request.user == article.user:   # 작성자와 수정 요청자가 같은 경우
+        if request.method == 'POST':
+            form = ArticleForm(request.POST, instance=article)
+            if form.is_valid():
+                form.save()
+                return redirect('article:detail', article.pk)
+        else:
+            form = ArticleForm(instance=article)
+    else:
+      return redirect('article:index')
+
+
+@login_required
+def delete(request, pk):
+    article = Article.objects.get(pk=pk)
+    if request.user == article.user:  # 작성자와 삭제 요청자가 같은 경우
+        article.delete()
+    return redirect('article:index')
+```
+
+```html
+<!-- articles/index.html -->
+
+{% for article in articles %}
+  <p>작성자 : {{ article.user }}</p>
+  ...
+```
+
+![django_many_to_one_relationship1](django_many_to_one_relationship1.png)
+
+```html
+<!-- articles/update.html -->
+
+<p>작성자 : {{ article.user }}</p>
+```
+
+![django_many_to_one_relationship2](django_many_to_one_relationship2.png)
+
+```html
+<!-- articles/detail.html -->
+
+{% if request.user == article.user %}
+  <a href="{% url 'articles:update' article.pk %}">UPDATE</a><br>
+  <form action="{% url 'articles:delete' article.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="DELETE">
+  </form>
+<% endif %>
+```
+
+## 작성자만 댓글 수정, 삭제 가능
+
+```python
+# articles/models.py
+
+class Comment(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    ...
+```
+
+```cmd
+python manage.py makemigrations
+<!-- 1 입력 후 엔터 두번 반복 -->
+python manage.py migrate
+```
+
+```python
+# articles/views.py
+
+def comments_create(request, pk):
+    article = Article.objects.get(pk=pk)
+    comment_form = CommentForm(request.POST)
+    if comment_form.is_valid():
+        comment = comment_form.save(commit=False)
+        comment.article = article
+        comment.user = request.user
+        comment_form.save()
+        return redirect('articles:detail', article.pk)
+    ...
+```
+
+![django_many_to_one_relationship3](django_many_to_one_relationship3.png)
+
+```python
+# articles/views.py
+
+def comments_delete(request, article_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    if reqeust.user == comment.user:  # 작성자와 삭제 요청자가 같은 경우
+        comment.delete()
+    return redirect('article:detail', article_pk)
+```
+
+```html
+<!-- articles/detail.html -->
+
+<ul>
+{% for comment in comments %}
+  <li>
+    {{ comment.user }} - {{ comment.content }}
+    {% if request.user == comment.user %}   <!-- 댓글 작성자만 삭제 버튼 보이도록 -->
+      <form action="{% url 'articles:comments_delete' article.pk comment.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="DELETE">
+      </form>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+```
