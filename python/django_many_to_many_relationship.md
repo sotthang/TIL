@@ -65,3 +65,121 @@ def likes(request, article_pk):
 ```
 
 ![django_many_to_many_relationship1](django_many_to_many_relationship1.png)
+
+## Profile 구현
+
+```python
+# accounts/urls.py
+
+urlpatterns = [
+    ...
+    path('profile/<username>/', views.profile, name='profile'),
+]
+```
+
+```python
+# accounts/views.py
+
+def profile(request, username):
+    User = get_user_model()
+    person = User.objects.get(username=username)
+    context = {
+      'person': person,
+    }
+    return render(request, 'accounts/profile.html', context)
+```
+
+```html
+<!-- accounts/profile.html -->
+
+<h1>{{ person.username }}님의 프로필</h1>
+<hr>
+<h2>{{ person.username }}'s 게시글</h2>
+{% for article in person.article_set.all %}
+  <div>{{ article.title }}</div>
+{% endfor %}
+<hr>
+<h2>{{ person.username }}'s 댓글</h2>
+{% for comment in person.comment_set.all %}
+  <div>{{ commtent.content }}</div>
+{% endfor %}
+<hr>
+<h2>{{ person.username }}'s 좋아요한 게시글</h2>
+{% for article in person.like_articles.all %}
+  <div>{{ article.title }}</div>
+{% endfor %}
+```
+
+```html
+<!-- articles/index.html -->
+
+<a href="{% url 'accounts:profile' user.username %}">내 프로필</a>
+
+<p>작성자 : <a href="{% url 'accounts:profile' article.user.username %}">{{ article.user }}</a></p>
+```
+
+![django_many_to_many_relationship2](django_many_to_many_relationship2.png)
+
+![django_many_to_many_relationship3](django_many_to_many_relationship3.png)
+
+## Follow 구현
+
+```python
+# accounts/models.py
+
+class User(AbstractUser):
+    followings = models.ManyToManyField('self', symmetrical=False, related_name='follwers')
+```
+
+```cmd
+python manage.py makemigrations
+python manage.py migrate
+```
+
+```python
+# accounts/urls.py
+
+urlpatterns = [
+    ...
+    path('<int:user_pk>/follow/', views.follow, name='follow'),
+]
+```
+
+```python
+# accounts/views.py
+
+@login_required
+def follow(request, user_pk):
+    User = get_user_model()
+    person = User.objects.get(pk=user_pk)
+    if person != request.user:
+        if person.followers.filter(pk=request.user.pk).exists():
+            person.followers.remove(request.user)
+        else:
+            person.followers.add(request.user)
+    return redirect('accounts:profile', person.username)
+```
+
+```html
+<!-- accounts/profile.html -->
+
+<div>
+  <div>
+    팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
+  </div>
+  {% if request.user != person %}
+    <div>
+      <form action="{% url 'accounts:follow' person.pk %}" method="POST">
+        {% csrf_token %}
+        {% if request.user in person.followers.all %}
+          <input type="submit" value="Unfollow">
+        {% else %}
+          <input type="submit" value="Follow">
+        {% endif %}
+      </form>
+    </div>
+  {% endif %}
+</div>
+```
+
+![django_many_to_many_relationship4](django_many_to_many_relationship4.png)
