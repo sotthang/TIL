@@ -34,3 +34,4 @@
   - [19.9 Django Media Files](https://github.com/sotthang/TIL/blob/master/python/django_media_files.md)
   - [19.10 Django Many to One Relationship](https://github.com/sotthang/TIL/blob/master/python/django_many_to_one_relationship.md)
   - [19.11 Django Many to Many Relationship](https://github.com/sotthang/TIL/blob/master/python/django_many_to_many_relationship.md)
+  - [19.12 Django Rest Framework](https://github.com/sotthang/TIL/blob/master/python/django_rest_framework.md)
