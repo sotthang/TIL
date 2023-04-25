@@ -19,6 +19,10 @@ Rest 라는 API 디자인 아키텍처를 구현한 API
 
 ## DRF Single Model
 
+'''cmd
+pip install djangorestframework
+'''
+
 HTTP Method
 
 - POST : Create
@@ -121,7 +125,7 @@ def article_detail(request, article_pk):
             return Response(serializer.data)
 ```
 
-## API Test
+### API Test
 
 ```cmd
 python manage.py makemigrations
@@ -146,3 +150,94 @@ Postman 활용 (https://www.postman.com/)
 ### DELETE
 
 ![django_rest_framework4](django_rest_framework4.png)
+
+## DRF N:1 Model
+
+```python
+# articles/urls.py
+
+urlpatterns = [
+    ...,
+    path('comments/', views.comment_list),
+    path('comments/<comment_pk>/', views.comment_detail),
+    path('<int:article_pk>/comments/', views.comment_create),
+    path('index', views.index, name='index'),
+]
+```
+
+```python
+# articles/models.py
+
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+```
+
+```cmd
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+
+```python
+# articles/serializers.py
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = '__all__'
+        read_only_fields = ('article',)
+
+
+class ArticleSerializer(serializers.ModelSerializer):
+    class MyCommentSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Comment
+            fields = ('id', 'article', 'content',)
+
+    comment_set = CommentSerializer(many=True, read_only=True)
+    comment_count = serializers.IntegerField(source='comment_set.count', read_only=True)
+    
+    class Meta:
+        model = Article
+        fields = '__all__'
+        read_only_fields = ('comment_set', 'comment_count',)
+```
+
+```python
+# articles/views.py
+
+@api_view(['GET'])
+def comment_list(request):
+    comments = Comment.objects.all()
+    serializer = CommentSerializer(comments, many=True)
+    return Response(serializer.data)
+
+
+@api_view(['GET' ,'DELETE', 'PUT'])
+def comment_detail(request, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    if request.method == 'GET':
+        serializer = CommentSerializer(comment)
+        return Response(serializer.data)
+    elif request.method == 'DELETE':
+        comment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    elif request.method == 'PUT':
+        serializer = CommentSerializer(comment, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
+
+@api_view(['POST'])
+def comment_create(request, article_pk):
+    article = Article.objects.get(pk=article_pk)
+    serializer = CommentSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(article=article)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+```
