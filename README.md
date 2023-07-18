@@ -16,4 +16,6 @@
 
 - [WEB](https://github.com/sotthang/TIL/tree/master/web)
 
+- [CS](https://github.com/sotthang/TIL/tree/master/cs)
+
 - [코딩테스트 연습](https://github.com/sotthang/coding_study)

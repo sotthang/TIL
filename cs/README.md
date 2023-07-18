@@ -1,0 +1,15 @@
+# CS (Computer Science)
+
+## CS 란
+
+컴퓨터의 소프트웨어, 하드웨어, 알고리즘, 데이터 구조, 네트워킹, 데이터베이스, 인공지능, 그래픽 등에 대한 이론과 실제적인 측면
+
+## 개발자가 CS 를 알아야 하는 이유
+
+- 알고리즘 설계 및 복잡한 문제 해결에 필요한 논리적 사고력를 갖출 수 있음
+- 데이터 구조와 알고리즘의 이해를 바탕으로 성능 개선과 메모리 관리를 최적화 할 수 있음
+- 소프트웨어 아키텍처 및 설계 원칙에 대한 이해를 통해 유지 보수가 용이하고 확장 가능한 소프트웨어를 개발 가능
+
+- [Computer](https://github.com/sotthang/TIL/blob/master/cs/computer.md)
+  - [컴퓨터의 숫자 표현](https://github.com/sotthang/TIL/blob/master/cs/number.md)
+  - [컴퓨터의 문자 표현](https://github.com/sotthang/TIL/blob/master/cs/character.md)
