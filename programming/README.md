@@ -23,3 +23,4 @@
   - [스택과 큐](https://github.com/sotthang/TIL/blob/master/programming/stack_queue.md)
   - [heap](https://github.com/sotthang/TIL/blob/master/programming/heap.md)
   - [graph](https://github.com/sotthang/TIL/blob/master/programming/graph.md)
+  - [greedy](https://github.com/sotthang/TIL/blob/master/programming/greedy.md)
