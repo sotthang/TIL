@@ -24,3 +24,4 @@
   - [heap](https://github.com/sotthang/TIL/blob/master/programming/heap.md)
   - [graph](https://github.com/sotthang/TIL/blob/master/programming/graph.md)
   - [greedy](https://github.com/sotthang/TIL/blob/master/programming/greedy.md)
+- [Early Return](https://github.com/sotthang/TIL/blob/master/programming/early_return.md)

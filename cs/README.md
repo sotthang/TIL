@@ -14,3 +14,4 @@
   - [컴퓨터의 숫자 표현](https://github.com/sotthang/TIL/blob/master/cs/number.md)
   - [컴퓨터의 문자 표현](https://github.com/sotthang/TIL/blob/master/cs/character.md)
   - [소스코드와 명령어](https://github.com/sotthang/TIL/blob/master/cs/sourcecode.md)
+  - [운영체제](https://github.com/sotthang/TIL/blob/master/cs/os.md)
