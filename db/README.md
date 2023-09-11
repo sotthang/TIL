@@ -39,3 +39,5 @@
   - [TRIGGER](https://github.com/sotthang/TIL/blob/master/db/sql_trigger.md)
   - [Normalization](https://github.com/sotthang/TIL/blob/master/db/sql_normalization.md)
   - [ERD](https://github.com/sotthang/TIL/blob/master/db/sql_erd.md)
+- [NoSQL](https://github.com/sotthang/TIL/blob/master/db/nosql.md)
+
