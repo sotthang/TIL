@@ -26,3 +26,4 @@
   - [greedy](https://github.com/sotthang/TIL/blob/master/programming/greedy.md)
 - [early return](https://github.com/sotthang/TIL/blob/master/programming/early_return.md)
 - [rest](https://github.com/sotthang/TIL/blob/master/programming/rest.md)
+- [singleton pattern](https://github.com/sotthang/TIL/blob/master/programming/singleton.md)
