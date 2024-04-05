@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47465f32-f284-4660-af80-72c24d606f76" name="Changes" comment="Add Topic 3-4 in pragmatic programmer">
-      <change beforePath="$PROJECT_DIR$/programming/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/programming/README.md" afterDir="false" />
+    <list default="true" id="47465f32-f284-4660-af80-72c24d606f76" name="Changes" comment="Add singleton and book">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book/the_pragmatic_programmer.md" beforeDir="false" afterPath="$PROJECT_DIR$/book/the_pragmatic_programmer.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hyeonseopso/dcty/TIL&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/hyeonseopso/dcty/TIL"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/programming" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,11 +77,20 @@
       <option name="project" value="LOCAL" />
       <updated>1712239846910</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add singleton and book">
+      <option name="closed" value="true" />
+      <created>1712240850346</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712240850346</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Topic 3-4 in pragmatic programmer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Topic 3-4 in pragmatic programmer" />
+    <MESSAGE value="Add singleton and book" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add singleton and book" />
   </component>
 </project>
