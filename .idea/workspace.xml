@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47465f32-f284-4660-af80-72c24d606f76" name="Changes" comment="Add Topic 8, 9 in pragmatic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book/the_pragmatic_programmer.md" beforeDir="false" afterPath="$PROJECT_DIR$/book/the_pragmatic_programmer.md" afterDir="false" />
+    <list default="true" id="47465f32-f284-4660-af80-72c24d606f76" name="Changes" comment="Add Topic 10, 11 in pragmatic">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712845521175</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Topic 10, 11 in pragmatic">
+      <option name="closed" value="true" />
+      <created>1713186847223</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713186847223</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -130,6 +137,7 @@
     <MESSAGE value="Add Topic 4, 5 in pragmatic" />
     <MESSAGE value="Add Topic 6, 7 in pragmatic" />
     <MESSAGE value="Add Topic 8, 9 in pragmatic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Topic 8, 9 in pragmatic" />
+    <MESSAGE value="Add Topic 10, 11 in pragmatic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Topic 10, 11 in pragmatic" />
   </component>
 </project>
