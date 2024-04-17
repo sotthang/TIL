@@ -18,4 +18,6 @@
 
 - [CS](https://github.com/sotthang/TIL/tree/master/cs)
 
+- [Problem Solving](https://github.com/sotthang/TIL/tree/master/problem_solving)
+
 - [코딩테스트 연습](https://github.com/sotthang/coding_study)
