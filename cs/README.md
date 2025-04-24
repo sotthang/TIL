@@ -10,9 +10,9 @@
 2. 데이터 구조와 알고리즘의 이해를 바탕으로 성능 개선과 메모리 관리를 최적화 할 수 있음
 3. 소프트웨어 아키텍처 및 설계 원칙에 대한 이해를 통해 유지 보수가 용이하고 확장 가능한 소프트웨어를 개발 가능
 
-- [Computer](https://github.com/sotthang/TIL/blob/master/cs/computer.md)
-  - [컴퓨터의 숫자 표현](https://github.com/sotthang/TIL/blob/master/cs/number.md)
-  - [컴퓨터의 문자 표현](https://github.com/sotthang/TIL/blob/master/cs/character.md)
-  - [소스코드와 명령어](https://github.com/sotthang/TIL/blob/master/cs/sourcecode.md)
-  - [운영체제](https://github.com/sotthang/TIL/blob/master/cs/os.md)
-  - [NLP](https://github.com/sotthang/TIL/blob/master/cs/nlp)
+- [Computer](https://github.com/sotthang/TIL/blob/main/cs/computer.md)
+  - [컴퓨터의 숫자 표현](https://github.com/sotthang/TIL/blob/main/cs/number.md)
+  - [컴퓨터의 문자 표현](https://github.com/sotthang/TIL/blob/main/cs/character.md)
+  - [소스코드와 명령어](https://github.com/sotthang/TIL/blob/main/cs/sourcecode.md)
+  - [운영체제](https://github.com/sotthang/TIL/blob/main/cs/os.md)
+  - [NLP](https://github.com/sotthang/TIL/blob/main/cs/nlp)
