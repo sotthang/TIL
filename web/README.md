@@ -6,10 +6,10 @@ Web site : 여러 개의 web page 가 모인 것
 
 Web page : HTML, CSS, JavaScript 등 Web 기술을 이용하여 만들어지는 하나의 인터넷 문서
 
-- [HTML](https://github.com/sotthang/TIL/blob/master/web/html.md)
-- [CSS](https://github.com/sotthang/TIL/blob/master/web/css.md)
-- [Position](https://github.com/sotthang/TIL/blob/master/web/position.md)
-- [Bootstrap](https://github.com/sotthang/TIL/blob/master/web/bootstrap.md)
-- [Javascript](https://github.com/sotthang/TIL/blob/master/web/javascript.md)
-- [Cookie](https://github.com/sotthang/TIL/blob/master/web/cookie.md)
-- [Session](https://github.com/sotthang/TIL/blob/master/web/session.md)
+- [HTML](https://github.com/sotthang/TIL/blob/main/web/html.md)
+- [CSS](https://github.com/sotthang/TIL/blob/main/web/css.md)
+- [Position](https://github.com/sotthang/TIL/blob/main/web/position.md)
+- [Bootstrap](https://github.com/sotthang/TIL/blob/main/web/bootstrap.md)
+- [Javascript](https://github.com/sotthang/TIL/blob/main/web/javascript.md)
+- [Cookie](https://github.com/sotthang/TIL/blob/main/web/cookie.md)
+- [Session](https://github.com/sotthang/TIL/blob/main/web/session.md)
