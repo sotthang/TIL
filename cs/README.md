@@ -10,6 +10,8 @@
 2. 데이터 구조와 알고리즘의 이해를 바탕으로 성능 개선과 메모리 관리를 최적화 할 수 있음
 3. 소프트웨어 아키텍처 및 설계 원칙에 대한 이해를 통해 유지 보수가 용이하고 확장 가능한 소프트웨어를 개발 가능
 
+## 리스트
+
 - [Computer](https://github.com/sotthang/TIL/blob/main/cs/computer.md)
   - [컴퓨터의 숫자 표현](https://github.com/sotthang/TIL/blob/main/cs/number.md)
   - [컴퓨터의 문자 표현](https://github.com/sotthang/TIL/blob/main/cs/character.md)

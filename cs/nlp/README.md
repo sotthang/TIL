@@ -20,3 +20,9 @@
 ## 참고 문헌
 
 - https://www.thumb.is/korean-blog-posts/what-is-nlp
+
+
+## 리스트
+
+- [Lowercase](https://github.com/sotthang/TIL/blob/main/cs/nlp/lowercase.md)
+- [stopwords](https://github.com/sotthang/TIL/blob/main/cs/nlp/stopwords.md)

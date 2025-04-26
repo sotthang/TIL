@@ -1,5 +1,7 @@
 # Python
 
+## 리스트
+
 - [1. python](https://github.com/sotthang/TIL/blob/main/python/python.md)
   - [1.1 namespace](https://github.com/sotthang/TIL/blob/main/python/namespace.md)
 - [2. string (문자열)](https://github.com/sotthang/TIL/blob/main/python/string.md)

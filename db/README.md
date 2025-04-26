@@ -24,6 +24,8 @@
 
 ![rdb_relation](rdb_relation.png)
 
+## 리스트
+
 - [SQL](https://github.com/sotthang/TIL/blob/main/db/sql.md)
   - [CREATE](https://github.com/sotthang/TIL/blob/main/db/sql_create.md)
   - [DROP](https://github.com/sotthang/TIL/blob/main/db/sql_drop.md)
