@@ -25,4 +25,9 @@
 ## 리스트
 
 - [Lowercase](https://github.com/sotthang/TIL/blob/main/cs/nlp/lowercase.md)
-- [stopwords](https://github.com/sotthang/TIL/blob/main/cs/nlp/stopwords.md)
+- [Stopwords](https://github.com/sotthang/TIL/blob/main/cs/nlp/stopwords.md)
+- [Regular Expressions](https://github.com/sotthang/TIL/blob/main/cs/nlp/regular_expressions.md)
+- [Tokenizing Text](https://github.com/sotthang/TIL/blob/main/cs/nlp/tokenizing_text.md)
+- [Stemming](https://github.com/sotthang/TIL/blob/main/cs/nlp/stemming.md)
+- [Lemmatization](https://github.com/sotthang/TIL/blob/main/cs/nlp/lemmatization.md)
+- [N-grams](https://github.com/sotthang/TIL/blob/main/cs/nlp/n-grams.md)
