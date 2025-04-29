@@ -78,5 +78,12 @@
     - [Sentiment Analysis](https://github.com/sotthang/TIL/blob/main/cs/nlp/sentiment_analysis.md)
     - [Rule-based Sentiment Analysis](https://github.com/sotthang/TIL/blob/main/cs/nlp/rule-based_sentiment_analysis.md)
     - [Pre-trained Transformer Models](https://github.com/sotthang/TIL/blob/main/cs/nlp/pre-trained_transformer_models.md)
-
+- Vectorizing Text
+    - [Vectorizing Text](https://github.com/sotthang/TIL/blob/main/cs/nlp/vectorizing_text.md)
+    - [Bag of Words (BoW)](https://github.com/sotthang/TIL/blob/main/cs/nlp/bow.md)
+    - [TF-IDF (Term Frequency-Inverse Document Frequency)](https://github.com/sotthang/TIL/blob/main/cs/nlp/tf-idf.md)
+- Topic Modeling
+    - [Topic Modeling](https://github.com/sotthang/TIL/blob/main/cs/nlp/topic_modeling.md)
+    - [LDA (Latent Dirichlet Allocation)](https://github.com/sotthang/TIL/blob/main/cs/nlp/lda.md)
+    - [LSA (Latent Semantic Analysis)](https://github.com/sotthang/TIL/blob/main/cs/nlp/lsa.md)
 
