@@ -86,4 +86,7 @@
     - [Topic Modeling](https://github.com/sotthang/TIL/blob/main/cs/nlp/topic_modeling.md)
     - [LDA (Latent Dirichlet Allocation)](https://github.com/sotthang/TIL/blob/main/cs/nlp/lda.md)
     - [LSA (Latent Semantic Analysis)](https://github.com/sotthang/TIL/blob/main/cs/nlp/lsa.md)
-
+- Text Classifier
+    - [Logistic Regression](https://github.com/sotthang/TIL/blob/main/cs/nlp/logistic_regression.md)
+    - [Naive Bayes](https://github.com/sotthang/TIL/blob/main/cs/nlp/naive_bayes.md)
+    - [Linear Support Vector Machine](https://github.com/sotthang/TIL/blob/main/cs/nlp/lsvm.md)
