@@ -5,3 +5,5 @@
 ## 리스트
 
 - [실용주의 프로그래머](https://github.com/sotthang/TIL/blob/main/book/the_pragmatic_programmer.md)
+- [실용주의 프로그래머](book/the_pragmatic_programmer.md)
+- [실용주의 프로그래머](the_pragmatic_programmer.md)

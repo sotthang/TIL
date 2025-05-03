@@ -1,0 +1,17 @@
+site_name: TIL
+theme:
+  name: material
+
+nav:
+  - 홈: index.md
+  - Markdown: markdown/markdown.md
+  - CLI: cli/cli.md
+  - Git: git/git.md
+  - Programming: programming/
+  - Python: python/
+  - DB: db/
+  - Web: web/
+  - CS: cs/
+  - Problem Solving: problem_solving/
+  - 코딩테스트 연습: https://github.com/sotthang/coding_study
+  - Book: book/README.md
