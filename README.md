@@ -1,6 +1,6 @@
 # TIL (Today I Learnd)
 
-개발자가 되기 위해 공부한 것을 기록하는 곳
+개발자가 되기 위해, 된 후에에 공부한 것을 기록하는 곳
 
 - [markdown](https://github.com/sotthang/TIL/blob/main/markdown/markdown.md)
 
@@ -21,3 +21,5 @@
 - [Problem Solving](https://github.com/sotthang/TIL/tree/main/problem_solving)
 
 - [코딩테스트 연습](https://github.com/sotthang/coding_study)
+
+- [book](https://github.com/sotthang/TIL/tree/main/docs/book)
