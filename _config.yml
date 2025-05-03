@@ -1,0 +1,13 @@
+title: TIL
+theme: jekyll-theme-primer
+
+markdown: CommonMarkGhPages
+
+liquid:
+  error_mode: lax
+  strict_filters: false
+  strict_variables: false
+
+plugins:
+  - jekyll-theme-primer
+  - jekyll-commonmark-ghpages
