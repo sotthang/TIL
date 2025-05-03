@@ -4,14 +4,14 @@ theme:
 
 nav:
   - 홈: index.md
-  - Markdown: markdown/markdown.md
-  - CLI: cli/cli.md
-  - Git: git/git.md
-  - Programming: programming/
-  - Python: python/
-  - DB: db/
-  - Web: web/
-  - CS: cs/
-  - Problem Solving: problem_solving/
+  - Markdown: markdown/README.md
+  - CLI: cli/README.md
+  - Git: git/README.md
+  - Programming: programming/README.md
+  - Python: python/README.md
+  - DB: db/README.md
+  - Web: web/README.md
+  - CS: cs/README.md
+  - Problem Solving: problem_solving/README.md
   - 코딩테스트 연습: https://github.com/sotthang/coding_study
   - Book: book/README.md

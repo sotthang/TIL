@@ -2,11 +2,11 @@
 
 개발자가 되기 위해, 된 후에에 공부한 것을 기록하는 곳
 
-- [markdown](https://github.com/sotthang/TIL/blob/main/markdown/markdown.md)
+- [markdown](https://github.com/sotthang/TIL/blob/main/markdown/README.md)
 
-- [cli](https://github.com/sotthang/TIL/blob/main/cli/cli.md)
+- [cli](https://github.com/sotthang/TIL/blob/main/docs/cli/README.md)
 
-- [git](https://github.com/sotthang/TIL/blob/main/git/git.md)
+- [git](https://github.com/sotthang/TIL/blob/main/git/README.md)
 
 - [programming](https://github.com/sotthang/TIL/tree/main/programming)
 

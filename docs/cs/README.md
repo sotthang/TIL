@@ -12,9 +12,9 @@
 
 ## 리스트
 
-- [Computer](https://github.com/sotthang/TIL/blob/main/cs/computer.md)
-  - [컴퓨터의 숫자 표현](https://github.com/sotthang/TIL/blob/main/cs/number.md)
-  - [컴퓨터의 문자 표현](https://github.com/sotthang/TIL/blob/main/cs/character.md)
-  - [소스코드와 명령어](https://github.com/sotthang/TIL/blob/main/cs/sourcecode.md)
-  - [운영체제](https://github.com/sotthang/TIL/blob/main/cs/os.md)
-  - [NLP](https://github.com/sotthang/TIL/blob/main/cs/nlp)
+- [Computer](computer.md)
+  - [컴퓨터의 숫자 표현](number.md)
+  - [컴퓨터의 문자 표현](character.md)
+  - [소스코드와 명령어](sourcecode.md)
+  - [운영체제](os.md)
+  - [NLP](nlp/README.md)

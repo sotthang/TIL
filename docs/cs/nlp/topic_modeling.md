@@ -11,5 +11,5 @@ ex:
 
 ## 대표적인 알고리즘 리스트
 
-- [LDA (Latent Dirichlet Allocation)](https://github.com/sotthang/TIL/blob/main/cs/nlp/lda.md)
-- [LSA (Latent Semantic Analysis)](https://github.com/sotthang/TIL/blob/main/cs/nlp/lsa.md)
+- [LDA (Latent Dirichlet Allocation)](lda.md)
+- [LSA (Latent Semantic Analysis)](lsa.md)

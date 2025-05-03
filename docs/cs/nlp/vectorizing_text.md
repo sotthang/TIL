@@ -6,6 +6,6 @@
 
 ## Vectorizing 방법
 
-- [Bag of Words (BoW)](https://github.com/sotthang/TIL/blob/main/cs/nlp/bow.md)
-- [TF-IDF (Term Frequency-Inverse Document Frequency)](https://github.com/sotthang/TIL/blob/main/cs/nlp/tf-idf.md)
+- [Bag of Words (BoW)](bow.md)
+- [TF-IDF (Term Frequency-Inverse Document Frequency)](tf-idf.md)
 
