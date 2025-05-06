@@ -18,4 +18,4 @@
   - [소스코드와 명령어](sourcecode.md)
   - [운영체제](os.md)
   - [NLP](nlp/README.md)
-  - [LLM](llm/README.md)
+  - [AI](ai/README.md)
