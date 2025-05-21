@@ -121,3 +121,9 @@ db = Chroma.from_documents(texts, embeddings)
 query = "인공지능의 미래"
 docs = db.similarity_search(query)
 ```
+
+## 고급 LangChain 기술술
+
+- [Parser](parser.md)
+- [LCEL](lcel.md)
+
