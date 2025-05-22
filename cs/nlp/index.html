@@ -1,0 +1,734 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>NLP (Natural Language Processing, 자연어 처리) - TIL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nlp-natural-language-processing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TIL" class="md-header__button md-logo" aria-label="TIL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TIL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NLP (Natural Language Processing, 자연어 처리)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TIL" class="md-nav__button md-logo" aria-label="TIL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TIL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    홈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problem_solving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problem Solving
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/sotthang/coding_study" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    코딩테스트 연습
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Book
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLP 란
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      자연어 처리 기술
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supervised-nlp-vs-unsupervised-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised NLP vs Unsupervised NLP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supervised NLP vs Unsupervised NLP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised NLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupervised-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unsupervised NLP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classification-vs-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      분류(Classification) vs 군집화(Clustering)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      참고 문헌
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      리스트
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="nlp-natural-language-processing">NLP (Natural Language Processing, 자연어 처리)</h1>
+<h2 id="nlp">NLP 란</h2>
+<p>사람이 사용하는 언어인 자연어를 컴퓨터가 이해하고 처리할 수 있도록 하는 인공지능의 하위 분야</p>
+<h2 id="_1">자연어 처리 기술</h2>
+<ol>
+<li>텍스트 전처리 : NLP의 첫 번째 단계는 텍스트 전처리입니다. 이 단계에서는 원시 텍스트를 기계가 처리할 수 있는 형태로 변환합니다. 주요 작업에는 다음과 같은 것들이 포함될 수 있으며 문장을 단어,구 또는 문장으로 나누는 작업입니다. <ul>
+<li>불용어 제거(Stopword Removal): 의미를 거의 갖지 않는 단어(예: 'the', 'and', 'is' 등)를 제거합니다. </li>
+<li>정규화(Normalization): 단어들을 표준화하여 다른 형태의 동일한 단어들을 하나로 통일시킵니다</li>
+</ul>
+</li>
+<li>형태소 분석과 구문 분석:<ul>
+<li>형태소 분석(Morphological  Analysis): 단어의 형태소를 분석하여 어간 추출이나 원형 복원을 수행합니다.</li>
+<li>구문 분석(Syntax  Parsing): 문장의 구조를 이해하고, 문법적인 구조를 분석하여 문장의 의미를 파악합니다.</li>
+</ul>
+</li>
+<li>의미 분석‍: 문맥을 이해하고 단어나 문장의 의미를 추론하는 작업입니다. 최근에는 단어 임베딩(Word Embedding) 기법을 활용하여 단어들을 벡터 공간에 매핑하여 의미적 유사성을 계산하는 방법이 주로 사용됩니다.</li>
+<li>기계 학습과 딥 러닝: NLP에서 기계 학습과 딥 러닝 기술이 중요한 역할을 합니다. 다음은 일반적으로 사용되는 몇 가지 기법입니다.‍<ol>
+<li>통계 기반 기법: N-gram 모델, 통계적 언어 모델 등을 사용하여 문장을 생성하거나 분석합니다.</li>
+<li>기계 학습 기반 접근: SVM(Support Vector Machine), 나이브 베이즈(Naive Bayes) 등의 분류 알고리즘을 사용하여 텍스트를 분류하거나 정보 추출 작업을 수행합니다.‍</li>
+<li>딥 러닝 기반 접근: 순환 신경망(RNN), 장단기 메모리(LSTM),  변환자(Transformer) 등의 신경망 구조를 사용하여 문장의 의미를 이해하고 생성하는 작업을 수행합니다. 특히 최근의 대부분의 NLP 최고 성능 모델들은 딥 러닝 기반의 Transformer 아키텍처를 기반으로 합니다.</li>
+</ol>
+</li>
+</ol>
+<h2 id="supervised-nlp-vs-unsupervised-nlp">Supervised NLP vs Unsupervised NLP</h2>
+<h3 id="supervised-nlp">Supervised NLP</h3>
+<p>입력 데이터와 그에 해당하는 레이블(정답)이 있는 경우에 사용</p>
+<p>주어진 데이터를 바탕으로 정답과 일치하는 패턴을 학습하고, 새로운 데이터에 대해 올바른 출력을 예측</p>
+<ul>
+<li>주요 목적 <ul>
+<li>정답이 주어진 상태에서 데이터를 학습하여 미래의 입력에 대한 예측을 정확하게 수행하는 것</li>
+</ul>
+</li>
+<li>주요 알고리즘<ul>
+<li>분류(Classification): 데이터가 특정 카테고리에 속하는지 예측하는 문제 (ex: 스팸 메일 필터링, 질병 진단)</li>
+<li>회귀(Regression): 연속적인 값을 예측하는 문제 (ex: 주택 가격 예측, 온도 예측)</li>
+</ul>
+</li>
+</ul>
+<h3 id="unsupervised-nlp">Unsupervised NLP</h3>
+<p>입력 데이터에 레이블(정답)이 없는 경우에 사용</p>
+<p>데이터의 숨겨진 패턴이나 구조를 찾는 것이 목적</p>
+<ul>
+<li>주요 목적<ul>
+<li>정답 없이 데이터 간의 관계나 패턴을 발견하고, 비슷한 데이터끼리 그룹화하거나 데이터의 분포를 분석하는 것</li>
+</ul>
+</li>
+<li>주요 알고리즘:<ul>
+<li>군집화(Clustering): 비슷한 데이터끼리 그룹을 만드는 문제 (ex: 고객 세분화, 이미지 분류)</li>
+<li>차원 축소(Dimensionality Reduction): 데이터를 더 작은 차원으로 변환하면서 중요한 정보를 유지하는 방법 (ex: 주성분 분석(PCA), t-SNE)</li>
+</ul>
+</li>
+</ul>
+<h3 id="classification-vs-clustering">분류(Classification) vs 군집화(Clustering)</h3>
+<p>분류(Classification) - 감독학습
+- 정답(레이블)이 있는 데이터를 학습
+- 입력 데이터를 사전에 정의된 클래스 중 하나로 분류
+- ex: 고양이와 개 이미지를 분류하거나, 고객의 신용 위험을 예측하는 문제</p>
+<p>군집화(Clustering) - 비지도학습
+- 정답(레이블)이 없는 데이터를 학습합
+- 입력 데이터를 비슷한 특성을 가진 그룹(클러스터)으로 묶음음
+- ex: 비슷한 고객을 그룹화하여 마케팅 전략을 세우거나, 유사한 뉴스 기사를 묶는 문제</p>
+<h2 id="_2">참고 문헌</h2>
+<ul>
+<li>https://www.thumb.is/korean-blog-posts/what-is-nlp</li>
+<li>https://nlp2024.tistory.com/120</li>
+</ul>
+<h2 id="_3">리스트</h2>
+<ul>
+<li>Text Processing<ul>
+<li><a href="lowercase/">Lowercase</a></li>
+<li><a href="stopwords/">Stopwords</a></li>
+<li><a href="regular_expressions/">Regular Expressions</a></li>
+<li><a href="tokenizing_text/">Tokenizing Text</a></li>
+<li><a href="stemming/">Stemming</a></li>
+<li><a href="lemmatization/">Lemmatization</a></li>
+<li><a href="n-grams/">N-grams</a></li>
+</ul>
+</li>
+<li>Identifying parts of speech and named entities<ul>
+<li><a href="text_tagging/">Text Tagging</a></li>
+<li><a href="pos/">Parts of Speech (POS) tagging</a></li>
+<li><a href="ner/">Named Entity Recognition</a></li>
+</ul>
+</li>
+<li>Sentiment Analysis<ul>
+<li><a href="sentiment_analysis/">Sentiment Analysis</a></li>
+<li><a href="rule-based_sentiment_analysis/">Rule-based Sentiment Analysis</a></li>
+<li><a href="pre-trained_transformer_models/">Pre-trained Transformer Models</a></li>
+</ul>
+</li>
+<li>Vectorizing Text<ul>
+<li><a href="vectorizing_text/">Vectorizing Text</a></li>
+<li><a href="bow/">Bag of Words (BoW)</a></li>
+<li><a href="tf-idf/">TF-IDF (Term Frequency-Inverse Document Frequency)</a></li>
+</ul>
+</li>
+<li>Topic Modeling<ul>
+<li><a href="topic_modeling/">Topic Modeling</a></li>
+<li><a href="lda/">LDA (Latent Dirichlet Allocation)</a></li>
+<li><a href="lsa/">LSA (Latent Semantic Analysis)</a></li>
+</ul>
+</li>
+<li>Text Classifier<ul>
+<li><a href="logistic_regression/">Logistic Regression</a></li>
+<li><a href="naive_bayes/">Naive Bayes</a></li>
+<li><a href="lsvm/">Linear Support Vector Machine</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

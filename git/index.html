@@ -1,0 +1,1103 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../cli/">
+      
+      
+        <link rel="next" href="../programming/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Git - TIL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TIL" class="md-header__button md-logo" aria-label="TIL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TIL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TIL" class="md-nav__button md-logo" aria-label="TIL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TIL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    홈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      git 이란
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="git 이란">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      흐름
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      장점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      단점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      명령어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      .gitignore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      branch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      branch 명령어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge 명령어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      fast forward merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge commit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fork 란
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Request 란
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      git flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="git flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      github flow 기본 원칙
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-flow-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      github flow model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      참고하기 좋은 블로그
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../problem_solving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problem Solving
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/sotthang/coding_study" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    코딩테스트 연습
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../book/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Book
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      git 이란
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="git 이란">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      흐름
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      장점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      단점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      명령어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      .gitignore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      branch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#branch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      branch 명령어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge 명령어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-forward-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      fast forward merge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      merge commit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fork 란
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pull Request 란
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      git flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="git flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      github flow 기본 원칙
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-flow-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      github flow model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      참고하기 좋은 블로그
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="git">git</h1>
+<h2 id="git_1">git 이란</h2>
+<p>분산형 버전 관리 시스템(DVCS) 으로 코드의 버전을 관리하는 도구이다.</p>
+<h3 id="_1">흐름</h3>
+<p><img alt="git_flow" src="image_git_flow.png" /></p>
+<p>working directory : 현재 작업하고 있는 프로젝트의 directory</p>
+<p>staging area : commit 을 하기 위해 git add 명령어로 추가한 파일들이 있는 area</p>
+<p>git 은 파일을 modified, staged, committed 로 관리</p>
+<ul>
+<li>modified : 파일이 수정된 상태</li>
+<li>staged : 수정할 파일을 커밋할 것이라고 표시한 상태</li>
+<li>committed : 커밋 된 상태</li>
+</ul>
+<h3 id="_2">장점</h3>
+<ul>
+<li>오프라인 작업이 가능하다. TFS 등의 기존 중앙집중형 형상관리 툴은 오프라인 작업을 아예 지원하지 않거나, 매우 제한적으로만 지원하였다. 본인이 특정 파일을 체크아웃했다는 사실이 실시간으로 서버에 드러나야 하기 때문이다. 온라인 상태에서 체크아웃한 파일은 오프라인 상태에서도 계속 작업할 수 있는 경우도 있으나, 이 경우에는 추가적인 형상관리가 안된다. git는 저장소를 일단 로컬에 복제하고, 로컬 저장소에 있는 히스토리도 그대로 유지되므로, 서버에서 새 자료를 받아올 수 없을 뿐이지 이외에는 오프라인 상태에서도 대부분의 형상관리 기능을 이용할 수 있다. 일종의 로컬 서버로 작용하는 셈.</li>
+<li>속도가 빠르다. 각각의 개발자들이 모두 분산처리 서버의 주인이 되는 셈이므로 서버가 직접 해야 될 일들이 많이 줄어든다.</li>
+<li>일시적인 서버 장애가 있어도 개발을 계속할 수 있다. 로컬 저장소를 이용하면 되기 때문.</li>
+<li>서버와 클라이언트 뿐인 기존 형상관리에 비해 분산처리 구조를 유연하게 세울 수 있다. 중간 서버를 둔다든지, 부서별로 따로 서버를 둔다든지 하는 구성이 자유롭게 가능.</li>
+<li>가지치기(branch)가 비교적 가볍다. 가지치기 자체를 git의 장점으로 꼽기도 하지만 이는 현존하는 대부분의 형상관리 도구가 지원하는 기능이다. 실질적인 차이는 그 구현 방법에 있다고 봐야 한다. git는 브랜칭이 매우 쉽고 가벼워 원하는 만큼 별 제약 없이 생성하고 삭제할 수가 있다. git만 사용해오던 사람은 당연하게 느껴질 것이고 이게 왜 장점인지조차 모를 수 있겠지만, 기존 형상관리 도구를 사용하던 사람들은 브랜칭 하나 하려고 수 시간의 미팅을 해야 하던 때도 있었다.</li>
+<li>병합(merge)에서 문제가 덜 발생한다. 서버의 자료를 가져와(fetch) 로컬에서 병합하고 이를 다시 올리는 형태이기 때문. 물론 아예 문제가 발생하지 않을 수는 없으나, 이러한 구조 덕분에 예기치 못하게 발생하는 병합 문제 발생 빈도가 낮아진다.</li>
+<li>스테이징을 지원한다. 단순히 커밋되지 않은 로컬 변동사항을 얘기하는 것이 아니고, 아예 커밋하기 전에 사용해야 하는 스테이징 단계가 따로 있다. 물론 이를 사용하지 않고 다른 형상관리 도구처럼 바로 커밋하는 식으로 사용할 수도 있다.</li>
+<li>직접 호스팅을 할 경우 상업용 용도로도 무료로 이용 가능한 방법이 존재한다.</li>
+<li>수많은 개발자용 툴이 Git을 자체 지원하거나, Git용 플러그인이 있다. 또한 관련 툴킷 범위도 넓어, 초보자를 위한 GUI부터 전문자용 Diff툴까지 Git사용에 도움이 되는 툴이 많다. 또한 libgit2 등을 이용하면 원하는 언어로 Git을 활용하는 프로그램을 직접 만들 수도 있다.</li>
+</ul>
+<h3 id="_3">단점</h3>
+<ul>
+<li>기존 형상관리 도구에 비해 덜 직관적이고 배우기 어렵다. 특히 중앙 집중형 형상관리 도구에 익숙한 사람일수록 귀찮고 어려워지는데, 용어도 컨셉트도 처리과정도 전혀 다르기 때문. 로컬 머신을 작업공간, 서버를 저장공간으로 생각하면 더 이상 복잡한 개념이 필요 없이 체크아웃 후 파일을 수정하고 다시 커밋하기만 하면 되는 중앙집중형 도구에 비해 git는 설계적으로 작업 디렉토리 - 스테이징 공간 - 로컬 저장소 - 원격 저장소 라는 다층구조를 가지고 있으며, 각각의 맡은 역할과 다른 계층과의 상호작용 방식이 단순 반복이 아니라 훨씬 복잡하게 연결된다. 게다가 이들 각각이 모두 실제 파일이 있는 공간을 의미하는 것이 아니라 작업 내용이 관리되는 개념적인 가상 공간과 실제 물리적 저장소가 섞여 있어 혼동을 유발한다.</li>
+<li>커밋, 푸시, 풀, 머지, 페치 등 영어 단어상으로는 비슷비슷하지만 구체적인 역할과 의미에 차이가 있는 수많은 용어들이 존재하며 기존의 지식이 이 새로운 컨셉트를 이용하는 데에 크게 방해가 된다. 또한 처음 배우는 경우 어디까지가 서버에 영향을 미치는 행위이고 어디까지가 로컬에서 안전하게 할 수 있는 일인지 명확하게 이해하기가 어려워 명령어 하나하나에 벌벌 떨게 된다. 서버에 있는 자료와 로컬의 자료를 비교하여 커밋 후에 무슨 변화가 일어나는지 미리 명확하게 알 수 있는 기존 형상관리에 비하면 확실히 덜 직관적이다. 바로 이 문제 때문에 기존 형상관리 도구를 계속 사용하는 경우도 많다.</li>
+<li>이 때문에 git을 사용하는 유형은 '확실하게 파악한 기능의 커맨드 조합을 안전하게 계속 반복하며 작업하는' 콘솔 명령어 파와, GUI 프로그램에서 규격화하여 제공하는 기능을 맡기고 사용하는 서드파티 프로그램 파로 크게 나뉜다. 둘 모두 결국에는 자신이 충분히 믿을 수 있을 정도로 동작을 파악한 후, 그 기능을 반복적으로 사용하는 경우가 많다.</li>
+<li>작업 계층 구조(작업 내용 - 스테이징 공간 - 로컬 저장소 - 원격 저장소 등)에 대한 '기능' 은 매우 명확하게 만들어져 있고 그 동작도 일정하지만, 정작 이를 해석해서 추상화하는 사람들의 해석과 설명이 제각각인 경우가 많다. 단적으로 구글에 'Git Workflow'만 검색해 봐도, '알기 쉬운 도표' 들이 수없이 검색되지만 완전히 똑같이 생긴 것이 없다시피 할 정도다. 앞에 언급한 작업 계층 구조의 명칭-역할의 조합에 미묘한 차이가 있는 것은 물론이고, 아예 특정 단계가 없어 단계의 숫자가 다르고, 도표에서 화살표로 표시된 각 명령어가 어느 단계에서 어느 단계로 오가는 작업인지조차 잘 뜯어보면 조금씩 다 다르다. 이는 git의 명령어가 명시적으로 특정 단계와 특정 단계가 연결된다고 딱 잘라 말할 수 없고, 그것을 단순히 화살표 하나로 표시할 수 없는 미묘한(그러나 나름 의미가 있는) 동작을 하기 때문이다. 이 때문에 'git에 익숙해진 사용자' 는 스스로 각 명령어에 대해 체감적으로 이해하고 있고 손에 익어 사용하고 있다고 느끼지만, 정작 그것을 표현하려고 보면 각 사용자끼리 표현방식이 일치하지 않는 복잡미묘한 개개인 직관의 문화가 정착되어 있다.</li>
+<li>한 번에 여러 브랜치나 여러 태그에 걸쳐서 커밋을 할 수 없다. 내가 만든 사소한 변동사항이 다른 브랜치에 자동적으로 알려지지 않고, 나중에 취합하는 시점이 돼서야 반영된다. 때에 따라선 이후 다른 브랜치와 병합하려 할 때 충돌의 원인이 될 수도 있다.</li>
+<li>하나의 저장소가 하나의 프로젝트 전체를 의미하는 것으로 강제되어 있어 일부만 브랜칭을 한다든지 클론을 한다든지 하는 일을 할 수 없다. 정책적인 부분이라 관점에 따라 장점이 될 수도 있겠지만, 해당 기능이 꼭 필요한 사람이라면 단점이 될 수 있다.</li>
+<li>push를 했다 해서 커밋 히스토리가 영원히 안전하게 저장된다고 장담할 수 없다. 중앙 집중형 형상관리에서는 일단 체크인을 하고 나면 서버에 문제가 생기지 않는 한에는 항상 안전하고 언제든 과거 기록을 볼 수 있으나, git에서는 push를 한 내용이라 하더라도 해당 브랜치가 다른 브랜치에 병합되기 전에 삭제돼버리면 나중에 해당 내용에 접근할 수 없다.</li>
+<li>커밋 ID가 긴 16진수 숫자(SHA-1 해시값)라 기억하기가 어렵고 항상 복사-붙여넣기를 해야 한다. 단순한 10진수 숫자로만 구성되어 있는 TFS 등에 비해 복잡한 것은 사실이다.</li>
+<li>서버에 저장소를 두고 로컬 머신에서는 작업중인 프로젝트만을 두는 것이 설계개념상 불가능하다. 원격 저장소와 로컬 저장소를 모두 요구하기 때문에 저장소 전체를 받아서 작업해야 된다는 부분도 원하지 않는 경우 단점이다. 작업 패턴이 git에 맞추어져 있다면 로컬 저장소 작업 공간 자체를 '원래 없었던 용량' 으로 생각하고 branch 등으로 늘어나는 체감 용량이 작다고 생각할 수 있지만, 당연하게도 저장소 용량은 작업이 무엇이냐에 따라 무한정 커질 수 있으며, 이 공간이 로컬 저장소와 서버에 1:1 비율로 동시에 요구되게 된다. 기존 형상관리 툴이 원하는 파일 하나만 덜렁 받아서 작업하고 체크인할 수도 있는 것에 비하면 구조적으로 로컬과 원격, 총 2배수 공간을 사용하도록 설계되어 있다.</li>
+</ul>
+<h3 id="_4">명령어</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- git init : 로컬 저장소 생성
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- git add &lt;파일명&gt; : 특정 파일 / 폴더의 변경사항 추가
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- git commit -m &#39;&lt;커밋메시지&gt;&#39; : 커밋 (버전 기록)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- git status : 상태 확인
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  - tracked : 이전부터 버전으로 관리되고 있는 파일
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    - unmodified : git status 에 나타나지 않음
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    - modified : changes not staged for commit
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    - staged : changed to be committed
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  - untracked : 버전으로 관리된 적 없는 파일 (새로운 파일)
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- git log : 버전 확인
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>- git push &lt;원격저장소&gt; &lt;브랜치&gt; : 원격저장소에 push (upload)
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>- git pull &lt;원격저장소&gt; &lt;브랜치&gt; : 원격저장소로부터 pull (download)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>- git clone &lt;url&gt; : 원격저장소 복제
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- git remote -v : 원격저장소 정보 확인
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- git remote add &lt;원격저장소&gt; &lt;url&gt; : 원격저장소 추가
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>- git remote rm &lt;원격저장소&gt; : 원격저장소 삭제
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>- git restore &lt;파일명&gt; : head commit 으로 복구
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>- git restore --staged &lt;파일명&gt; : git add 로 stage 에 올라간 것을 취소
+</span></code></pre></div>
+<h3 id="gitignore">.gitignore</h3>
+<p>프로젝트에서 버전 관리가 필요하지 않은 파일, 폴더 등을 관리할 수 있는 파일</p>
+<p>이미 commit 된 파일은 gitignore 에 넣어도 ignore 가 안되기에 프로젝트 시작 전에 설정 (commit 된 파일 삭제하면 ignore 적용 가능)</p>
+<p>ex) 비밀번호, 고객정보 등</p>
+<p><a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+<p><a href="https://www.toptal.com/developers/gitignore">https://www.toptal.com/developers/gitignore</a></p>
+<p>에서 template 참고 가능</p>
+<h2 id="branch">branch</h2>
+<p>독립적인 작업을 환경을 만들고 관리하기 위한 것</p>
+<h3 id="branch_1">branch 명령어</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- git branch &lt;branch name&gt; : 브랜치 생성
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- git checkout &lt;branch name&gt; or git switch &lt;branch name&gt;: 브랜치 이동
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>- git checkout -b &lt;branch name&gt; : 브랜치 생성 후 이동
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- git branch : 브랜치 목록 출력
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>- git branch -d &lt;branch name&gt; : 브랜치 삭제
+</span></code></pre></div>
+<h3 id="merge">merge</h3>
+<p>branch 에서 작업 한 이력을 합치기 위한 명령어</p>
+<p>merge 시</p>
+<ol>
+<li>작업한 파일이 중복되지 않는다면 conflict 없이 merge 성공</li>
+<li>작업한 파일이 중복된다면 conflict 발생, 중복 파일 확인 후 수정 후 직접 commit</li>
+</ol>
+<h3 id="merge_1">merge 명령어</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>- git merge &lt;branch name&gt; : 현재 head 와 branch name 을 merge
+</span></code></pre></div>
+<h3 id="fast-forward-merge">fast forward merge</h3>
+<p>master (main) 에서 변경된 사항이 없을 때 merge 하는 경우</p>
+<h3 id="merge-commit">merge commit</h3>
+<p>master (main) 에서 변경된 사항이 있는 경우</p>
+<h2 id="fork">Fork 란</h2>
+<p>다른 사람의 저장소의 repository 를 내 원격저장소로 가져오는 것
+(clone 은 내 로컬저장소로 가져오는 것)</p>
+<h2 id="pull-request">Pull Request 란</h2>
+<p>다른 사람의 저장소에 내가 작업한 코드를 반영해달라고 요청하는 것</p>
+<h2 id="git-flow">git flow</h2>
+<p>git 사용 시 협업을 위한 방법론</p>
+<table>
+<thead>
+<tr>
+<th>branch</th>
+<th>주요특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>master</td>
+<td>배포 가능한 상태의 코드</td>
+</tr>
+<tr>
+<td>develop</td>
+<td>feature branch 로 나뉘어지거나 발생된 버그 수정 등 개발진행, 이후 release branch 로 분기</td>
+</tr>
+<tr>
+<td>feature branches</td>
+<td>기능별 개발 branch, 기능 반영 또는 drop 되면 branch 삭제</td>
+</tr>
+<tr>
+<td>release branches</td>
+<td>개발 완료 후 QA/test 로 얻어진 minor bug fix 반영</td>
+</tr>
+<tr>
+<td>hotfixes</td>
+<td>긴급하게 반영해야하는 bug fix</td>
+</tr>
+</tbody>
+</table>
+<h3 id="github-flow">github flow 기본 원칙</h3>
+<ol>
+<li>master branch 는 반드시 배포 가능한 상태여야 한다</li>
+<li>feature branch 는 기능의 의도를 알 수 있도록 작성한다</li>
+<li>commit message 는 매우 중요하므로 명확하게 작성한다</li>
+<li>Pull Request 를 통해 협업한다</li>
+<li>변경사항을 반영하고 싶다면 master branch 에 merge 한다</li>
+</ol>
+<h3 id="github-flow-model">github flow model</h3>
+<ol>
+<li>Shared Repository Model<ul>
+<li>동일한 저장소를 공유 (collaborator 등록 필수)</li>
+<li>master + feature branch 로 작업</li>
+</ul>
+</li>
+<li>Fork &amp; Pull Model<ul>
+<li>fork 를 통해 본인 저장소에서 작업 (collaborator 등록 필요 없음)</li>
+<li>오픈소스 참여 과정에서 사용되는 방식</li>
+</ul>
+</li>
+</ol>
+<h3 id="_5">참고하기 좋은 블로그</h3>
+<ul>
+<li><a href="https://backlog.com/git-tutorial/kr/intro/intro1_1.html">https://backlog.com/git-tutorial/kr/intro/intro1_1.html</a></li>
+<li><a href="https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%B2%84%EC%A0%84-%EA%B4%80%EB%A6%AC%EB%9E%80%3F">https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EB%B2%84%EC%A0%84-%EA%B4%80%EB%A6%AC%EB%9E%80%3F</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2150 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>실용주의 프로그래머 - TIL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TIL" class="md-header__button md-logo" aria-label="TIL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TIL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              실용주의 프로그래머
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TIL" class="md-nav__button md-logo" aria-label="TIL" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TIL
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    홈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problem_solving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problem Solving
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/sotthang/coding_study" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    코딩테스트 연습
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Book
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1장 실용주의 철학
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1장 실용주의 철학">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 1 당신의 인생이다
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 2 고양이가 내 소스 코드를 삼켰어요
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 3 소프트웨어 엔트로피
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 4 돌멩이 수프와 삶은 개구리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 5 적당히 괜찮은 소프트웨어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 6 지식 포트폴리오
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 7 소통하라!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2장 실용주의 접근법
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2장 실용주의 접근법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 8 좋은 설계의 핵심
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-9-dry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 9 DRY: 중복의 해악
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 10 직교성
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 11 가역성
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 12 예광탄
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 13 프로토타입과 포스트잇
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 14 도메인 언어
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 15 추정
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3장 기본 도구
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3장 기본 도구">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 16 일반 텍스트의 힘
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 17 셀 가지고 놀기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 18 파워 에디팅
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 19 버전 관리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 20 디버깅
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 21 텍스트 처리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 22 엔지니어링 일지
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4장 실용주의 편집증
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4장 실용주의 편집증">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 23 계약에 의한 설계
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 24 죽은 프로그램은 거짓말을 하지 않는다
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 25 단정적 프로그래밍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 26 리소스 사용의 균형
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 27 헤드라이트를 앞서가지 말라
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5장 구부리거나 부러지거나
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5장 구부리거나 부러지거나">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-28" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 28 결함도 줄이기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 29 실세계를 갖고 저글링하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 30 변환 프로그래밍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 31 상속세
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 32 설정
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6장 동시성
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6장 동시성">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 33 시간적 결합 깨트리기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 34 공유 상태는 틀린 상태
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 35 액터와 프로세스
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-36" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 36 칠판
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7장 코딩하는 동안
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7장 코딩하는 동안">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-37" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 37 파충류의 뇌에 귀 기울이기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-38" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 38 우연에 맡기는 프로그래밍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-39" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 39 알고리즘의 속도
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-40" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 40 리팩터링
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 41 테스트로 코딩하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 42 속성 기반 테스트
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 43 바깥에서는 안전에 주의하라
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-44" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 44 이름 짓기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8장 프로젝트 전에
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8장 프로젝트 전에">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 45 요구 사항의 구렁텅이
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 46 불가능한 퍼즐 풀기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 47 함께 일하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-48" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 48 애자일의 핵심
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9장 실용주의 프로젝트
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9장 실용주의 프로젝트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 49 실용주의 팀
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-50" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 50 코코넛만으로는 부족하다
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 51 실용주의 시작 도구
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 52 사용자를 기쁘게 하라
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topic 53 오만과 편견
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">실용주의 프로그래머</h1>
+<h2 id="1">1장 실용주의 철학</h2>
+<h3 id="topic-1">Topic 1 당신의 인생이다</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>많은 개발자들이 불만에 차있다. 현재 업무에 갇혀 있거나, 기술의 변화를 쫓아가지 못하거나, 재택 근무를 하고 싶거나 등
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>직접 바꿔라!
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>소프트웨어 개발은 구직자에게 주도권이 있는 직업 순위 중 상위권이다.
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>기술에 뒤쳐지는 기분이 든다면 여가 시간을 쪼개서 공부하고 재택 근무를 하고 싶으면 가능한지 물어보아라.
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>주도적으로 행동하여 기회를 잡아라.
+</span></code></pre></div>
+<h3 id="topic-2">Topic 2 고양이가 내 소스 코드를 삼켰어요</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>실용주의 철학의 초석 중 하나는 자신과 자신의 행동에 책임을 지는 것이다.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>잘 나가는 프로젝트에서도 납품이 늦어지거나 예상치 못했던 기술적 문제가 발생 할 수 있다.
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>이런 일을 우리는 전문가답게 처리하려고 노력하며, 정직하고 솔직해져야 한다.
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>그리고 여러분의 팀이 여러분을 믿고 의지할 수 있어야 한다.
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>연구에 따르면 창의성과 공동 작업에는 팀 내의 신뢰가 절대적으로 필요하다고 한다.
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>신뢰에 바탕을 둔 환경에서 생각과 아이디어를 제안 할 수 있다.
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>또한 결과에 대한 책임을 지기로 했다면 나중에 그 결과를 감당해야 할 것이다.
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>실수하거나 잘못된 판단을 내렸다면, 정직하게 인정하고 다른 방안을 제안하도록 노력하라.
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>&quot;고양이가 내 소스 코드를 삼켰어요.&quot; 라고 말해 봐야 별 도움이 안 될 것이다.
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>변명 말고 대안을 제시하라. 안된다고 하지 말고 상황을 개선하기 위해 무엇을 할 수 있는지 설명하라.
+</span></code></pre></div>
+<h3 id="topic-3">Topic 3 소프트웨어 엔트로피</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>소프트웨어 개발에 엔트로피의 증가는 우리에게 많은 영향을 끼친다.
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>엔트로피는 시스템 내의 무질서한 정도를 가리키는 물리학 용어이다.
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>소프트웨어의 무질서도가 증가할 때 우리는 이를 &#39;소프트웨어의 부패&#39; 또는 &#39;기술 부채&#39; 라고 부른다.
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>언젠가는 갚을 수 있다고 생각하지만 아마 갚지는 않을 것이다.
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>도심에서 아름답고 깨끗한 건물이 있는 반면, 썩어 가는 유령선 같은 건물이 있다.
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>도시 부패를 연구하는 사람들은 유인 메커니즘인 깨진 창문을 발견했다.
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>방치된 깨진 창문 하나가 둘이 되고 쓰레기를 함부로 버리고 낙서를 시작한다.
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>깨진 창문을 내버려 두지 말라.
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>나쁜 설계, 잘못된 결정, 형편없는 코드 등 모두 깨진 창문이다.
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>물론 가장 좋은 것은 창문을 깨트리거나 망가트리지 않는 것이다.
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>깨진 창문 하나는 내리막길로 가는 첫걸음이다.
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>명심하라. 깨진 창문은 없어야 한다. 
+</span></code></pre></div>
+<h3 id="topic-4">Topic 4 돌멩이 수프와 삶은 개구리</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>군인들이 전쟁이 끝나고 집으로 가는 길에 마을이 보여 배고픔을 해결하기 위해 갔다.
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>하지만 전쟁으로 인해 식량이 부족하여 아무도 대접해주지 않았다.
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>그러자 군인들은 냄비에 물을 끓이고 돌멩이를 넣었다.
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>사람들이 &quot;그것만 집어넣는 거에요?&quot; 라고 묻자 군인들은 말했다. &quot;당연하지요. 누군가는 당근을 몇 개 넣으면 더 맛있다고들 하지만요.&quot;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>사람들은 집에서 당근을 가져왔고 다시 물었다. &quot;그럼 된 건가요?&quot;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>&quot;흠, 감자 몇 개 더 넣으면 묵직한 맛이 날 텐데요.&quot; 라고 군인이 말하자 다른 사람들이 감자를 가져왔다.
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>이렇게 몇 번을 반복하자 군인들과 마을 사람들은 오랜만에 제대로 된 식사를 할 수 있었다.
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>이야기에는 다양한 교훈이 있지만 가장 중요한 것은 군인들이 하나의 촉매가 되어 불가능한 것을 가능하게 했다는 점이다.
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>우리는 간혹 이 군인들을 모방해야 할 때가 있다. 다른 사람들이 각자 자신의 자원을 지키려고 한다면 돌멩이를 내놔야 할 때다.
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>한편 돌멩이 수프 이야기는 조심스럽고 점진적인 속임수에 관한 이야기이기도 하다.
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>마을 사람들은 돌멩이 수프에 대해 생각하느라 다른 일들은 까맣게 잊어버렸다.
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>프로젝트는 서서히, 하지만 가차없이 구제불능인 상태가 되어 버린다.
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>차가운 물에 개구리를 넣고 조금씩 물을 덮히면 개구리는 삶아질 때까지 그냥 그대로 있을 것이다.
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>개구리처럼 되지 말자. 당장 하고 있는 일에만 정신을 쏟지 말고, 주변에서 무슨 일이 벌어지는지 늘 살펴보라. 
+</span></code></pre></div>
+<h3 id="topic-5">Topic 5 적당히 괜찮은 소프트웨어</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>완벽한 것을 만들어 내기란 불가능하다. 특히 버그 없는 소프트웨어는 더더욱.
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>&#39;적당히 괜찮은&#39; 이라는 표현은 너절하거나 형편없는 코드를 의미하지 않는다. 시스템이 성공하려면 사용자의 요구 사항을 충족해야 한다.
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>여러분이 생산해 낸 것이 적당히 괜찮게 사용자의 요구를 충족하는지 결정하는 과정에 사용자가 참여할 기회를 가져야 한다.
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>또한 완벽하게 훌륭한 프로그램을 과도하게 장식하거나 지나칠 정도로 다듬느라 망치지 말라.
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>그냥 넘어가도 코드를 현재 상태로 한동안 그대로 놓아두라. 완벽하지 않을 수도 있지만 그래도 괜찮다.
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>완벽해지기란 불가능하다. 멈춰야 할 때를 알라.
+</span></code></pre></div>
+<h3 id="topic-6">Topic 6 지식 포트폴리오</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>우리는 프로그래머들이 컴퓨터, 애플리케이션 도메인 등에 대해 알고 있는 모든 사실과 경험을 그들의 &#39;지식 포트폴리오&#39; 로 생각해보길 좋아한다.
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>지식 포트폴리오 관리는 투자 포트폴리오 관리와 매우 유사하다.
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>1. 진지한 투자자는 주기적으로 투자하는 습관이 있다.
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>2. 장기적인 성공의 열쇠는 다각화다.
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>3. 똑똑한 투자자는 보수적인 투자와 위험이 크지만 보상이 높은 투자 사이에서 포트폴리오의 균형을 잘 맞춘다.
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>4. 투자자는 최대 수익을 위해 싸게 사서 비싸게 팔려고 한다.
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>5. 포트폴리오는 주기적으로 재검토하고 재조정해야 한다.
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>그런데 포트폴리오의 종잣돈이 될 지식 자산을 공급하는 최선의 길은 무엇일까? 여기에 몇 가지 제안을 한다.
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>- 매년 새로운 언어를 최소 하나는 배워라
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>- 기술 서적을 한 달에 한 권씩 읽어라
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>- 기술 서적이 아닌 책도 읽어라
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>- 수업을 들어라
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>- 지역 사용자 단체나 모임에 참여하라
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>- 다른 환경에서 실험해 보라
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>- 요즘 흐름을 놓치지 말라
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>마지막으로 중요한 점은 여러분이 읽거나 듣는 것에 대해 비판적으로 생각하는 것이다.
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>여러분의 포트폴리오에 있는 지식을 정확히 유지할 수 있도록 하고 업체나 매체의 과대광고에 흔들리지 않아야 함을 명심하라.
+</span></code></pre></div>
+<h3 id="topic-7">Topic 7 소통하라!</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>청중을 알라
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>그저 말하는 것만으로는 부족하다. 전달하려는 내용을 제대로 전달하고 있는 경우에만 소통하고 있다고 할 수 있다.
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>그렇게 하기 위해서는 청중의 요구와 관심, 능력을 이해할 필요가 있다. 소통하면서 청중에 대한 지식을 쌓아 나가라.
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>말하고 싶은게 무언지 알라
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>비즈니스에서 사용하는 조금 더 격식을 갖춘 형태의 의사소통에서 가장 어려운 부분은 아마도 여러분이 말하고자 하는 것이 정확히 무엇인지 생각해 내는 일일 것이다.
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>무엇을 말할지 미리 계획하라. 의사소통하고 싶은 아이디어들을 적은 다음 제대로 전달하는 데 필요한 전략을 몇 개 세워라.
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>상대가 무엇을 원하는지 알았다면 원하는 것을 이루어 주자.
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>때를 골라라
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>청중이 무엇을 듣기 원하는지 이해하려면 그들의 우선순위를 알아야 한다.
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>말하는 내용뿐 아니라 말하는 시점도 적절하게 해라.
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>스타일을 골라라
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>전달하는 스타일을 청중에 어울리도록 조정하라. 어떤 사람은 좀 격식 있는 그저 &#39;사실&#39;만 전달하는 브리핑을 원하고,
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>또 어떤 사람은 본론에 들어가기 전에 한참동안 다방면의 한담을 원한다.
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>뭐가 좋을지 모르겠거든 물어보라.
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>멋져 보이게 하라
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>여러분의 아이디어는 중요하다. 그러니 마땅히 청중에게 멋지게 전달하기 위한 수단을 준비해야 한다.
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>오늘날 형편없어 보이는 출력물을 만드는 것에 대한 변명은 용납되지 않는다.
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>현대의 소프트웨어는 여러분이 마크다운을 사용하든 워드 프로세서를 사용하든 상관없이 눈부신 출력물을 만들어 낼 수 있다.
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>청중을 참여시켜라
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>우리는 우리가 만드는 문서 자체보다 문서를 만드는 과정이 더 중요해지는 경우를 자주 목도한다.
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>가능하다면 독자가 문서 초안에 참여하도록 하라. 피드백을 받고 그들의 머릿속을 도용하라.
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>경청하라
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>다른 사람들이 여러분이 하는 말을 경청해 주길 바란다면 사용할 수 있는 기법이 하나 있다. 그들의 말을 경청하는 것이다.
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>질문을 해서 사람들이 이야기를 하도록 북돋우거나, 토론의 내용을 그들 자신의 표현으로 다시 말해 달라고 요청하라.
+</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>회의를 대화로 바꾸면 생각을 좀 더 효과적으로 전달할 수 있을 것이다.
+</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>
+</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>응답하라
+</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>
+</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>누군가에게 질문을 했는데 아무런 응답이 없다면 그가 무례하다고 느낄 것이다. 언제나 이메일과 음성 메시지에 답을 하라.
+</span><span id="__span-6-43"><a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>심지어 &quot;다음에 답해 드리겠습니다.&quot; 이더라도.
+</span><span id="__span-6-44"><a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>늘 사람들에게 응답해 주면 때때로 저지르는 실수에 대해 훨씬 더 관대해질 것이다.
+</span><span id="__span-6-45"><a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>
+</span><span id="__span-6-46"><a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>문서화
+</span><span id="__span-6-47"><a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>
+</span><span id="__span-6-48"><a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>실용주의 프로그래머는 문서화를 전체 개발 프로세스의 필요 불가결한 부분으로 받아들인다.
+</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>노력을 중복으로 들이거나 시간을 낭비하지 말고 문서를 늘 손에 닿는 가까운 곳에 두면 된다. 바로 코드 안에 말이다.
+</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a>소스 코드의 주석으로 보기 좋은 문서를 쉽게 생성할 수 있다.
+</span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a>그렇다고 해서 모든 함수나 자료 구조, 타입 정의에 무조건 주석을 달아야 한다는 주장에 동의하는 것은 아니다.
+</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a>이런 기계적인 주석은 오히려 코드 유지 보수를 어렵게 만든다.
+</span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a>소스 코드에 다는 주석은, 프로젝트에서 쉽게 누락되는 다른 곳에서 문서화할 수 업슨 부분을 문서화하기에 최적의 기회다.
+</span></code></pre></div>
+<h2 id="2">2장 실용주의 접근법</h2>
+<h3 id="topic-8">Topic 8 좋은 설계의 핵심</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>좋은 설계는 나쁜 설계보다 바꾸기 쉽다.
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>잘 설계된 코드는 바뀜으로써 사용하는 사람에게 맞춰져야 한다. 그래서 우리는 ETC (Easier To Change) 원칙을 따른다.
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>가치는 여러분이 결정을 내리게 도움을 주는 것이다. 소프트웨어라는 틀에서 생각해보면 ETC 는 선택의 갈림길에서 도움을 주는 안내자다.
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>ETC 에는 암묵적인 전제가 있다. 바로 여러 길 중 어떤 길이 미래의 변경을 쉽게 만드는지 알 수 있다는 것이다.
+</span></code></pre></div>
+<h3 id="topic-9-dry">Topic 9 DRY: 중복의 해악</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>소프트웨어를 신뢰성 높게 개발하는 유일한 길, 개발을 이해하고 유지 보수하기 쉽게 만드는 유일한 길은 
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>우리가 DRY (Don&#39;t Repeat Yourself) 라 부르는 원칙을 따르는 것이라 생각한다.
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&#39;모든 지식은 시스템 내에서 단 한 번만, 애매하지 않고 권위 있게 표현되어야 한다.&#39;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>DRY 를 따르지 않으면 똑같은 것이 두 군에 이상에 표현될 것이다. 하나를 바꾸면 나머지도 바꿔야 함을 기억해야 한다.
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>DRY 는 지식의 중복, 의도의 중복에 대한 것이다. 똑같은 개념을 다른 곳 두 군데에서 표현하면 안 된다는 것이다.
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>주석도 마찬가지다. 쓸데없는 주석은 코드와 중복일 뿐이다.
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>아마 발견하거나 없애기 가장 어려운 유형의 중복은 같은 프로젝트에서 일하는 개발자들 사이에서 발생할 것이다.
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>최선책은 개발자 간에 적극적이고 빈번한 소통을 장려하는 것이다.
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>일일 스크럼 스탠드업 미팅을 운영하거나 한 사람을 프로젝트 사서로 임명하거나 등
+</span></code></pre></div>
+<h3 id="topic-10">Topic 10 직교성</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>직교성이란 기하학에서 빌려온 용어로 그래프의 축과 같이 두 직선이 직각으로 만나는 경우 직교한다고 말한다.
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>컴퓨터 과학에서 이 용어는 일종의 독립성이나, 결함도 줄이기를 의미한다.
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>잘 설계된 시스템에서는 데이터베이스 코드가 사용자 인터페이스와 서로 직교할 것이다.
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>데이터베이스와 인터페이스는 서로 영향을 주지 않으면서 자기 자신을 교체할 수 있다.
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>직교성은 생산성을 향상시켜주며 리스크는 감소시킨다.
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>다음은 직교성을 유지하기 위한 몇 가지 기법이다.
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>1. 코드의 결합도를 줄여라
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>2. 전역 데이터를 피하라
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>3. 유사한 함수를 피하라
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>직교성은 Topic 9 DRY 원칙과도 밀접한 관계가 있다. 
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>DRY 원칙은 시스템 내부의 중복을 최소화하고, 직교성은 시스템 컴포넌트 간의 상호 의존도를 줄인다.
+</span></code></pre></div>
+<h3 id="topic-11">Topic 11 가역성</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>가역성이란 초기 상황으로 되돌아 올 수 있는 성질을 의미한다.
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>이 책의 많은 주제는 유연하고 적응 가능한 소프트웨어를 만드는 방법에 초점을 맞추고 있다.
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>특히 DRY 원칙, 결합도 줄이기, 외부 설정 사용하기를 따른다면 중요하면서도 되돌릴 수 없는 결정의 수를 줄일 수 있다.
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>되돌릴 수 없는 결정을 줄여야 하는 까닭은 우리가 프로젝트 초기에 늘 최선의 결정을 내리지는 못하기 때문이다.
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>웹 브라우저 기반 애플리케이션으로 시작한 프로젝트가 중간에 모바일 앱으로 변경된다면 바꾸는 것이 얼마나 어려울까?
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>이상적인 상황이라면 적어도 서버 쪽은 큰 변화가 없어야 한다. HTML 렌더링을 걷어내고 API 로 대체하기만 하면 될 것이다.
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>결정이 바뀌지 않을 것이라 가정하고서 발생할지도 모를 우연한 사건에 대비하지 않는 데에서 실수가 나온다.
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>결정이 돌에 새겨진 것이 아니라 바닷가의 모래 위에 쓰인 글씨라 생각하라.
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>언제든지 큰 파도가 글씨를 지워버릴 수 있다.
+</span></code></pre></div>
+<h3 id="topic-12">Topic 12 예광탄</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>총알이 공기 중에 밝은 줄무늬의 궤적을 남기는 것을 볼 수 있는데, 이런 줄무늬는 예광탄이 만드는 것이다.
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>예광탄은 일반 탄환들 사이에 일정한 간격으로 끼어 있고, 이 궤적을 피드백 삼아 조준을 재조정한다.
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>프로젝트에서도 예광탄이 필요하다.
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>코딩에서 동일한 효과를 얻으려면 우리를 요구 사항으로부터 최종 시스템의 일부 측면까지 빨리, 눈에 보이게, 반복적으로 도달하게 해 줄 무언가를 찾아야 한다.
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>시스템을 정의하는 중요한 요구 사항을 찾아라. 의문이 드는 부분이나 가장 위험이 커 보이는 곳을 찾아라.
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>이런 부분의 코드를 가장 먼저 작성하도록 개발 우선순위를 정하라.
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>예광탄 개발 방법은 &#39;프로젝트는 결코 끝나지 않는다.&#39;는 견해와도 일맥상통한다. 변경 요청과 기능 추가 요청은 언제나 계속 들어오기 마련이다.
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>예광탄 개발 방법은 점진적인 접근 방법이다.
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>예광탄 코드 접근 방법에는 여러 장점이 있다.
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>1. 사용자가 뭔가 작동하는 것을 일찍부터 보게 된다
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>2. 개발자가 들어가서 일할 수 있는 구조를 얻는다
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>3. 통합 작업을 수행할 기반이 생긴다
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>4. 보여줄 것이 생긴다
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>5. 진행 상황에 대해 더 정확하게 감을 잡을 수 있다
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>예광탄은 지금 맞히고 있는 것이 무엇인지 보여준다. 그러나 그것이 꼭 목표물이라는 보장은 없다. 그럴 경우 목표물에 맞을 때까지 조준을 옮겨야 한다. 이것이 핵심이다.
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>프로토타이핑과 다를 바 없다고 생각하는 사람도 있을 것이다.
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>프로토타입은 최종 시스템의 어떤 특정한 측면을 탐사해 보는 것이 목표다.
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>진짜 프로토타입 방식을 따른다면 프로토타입은 어떤 개념을 실험해 보느라 대충 끼워 맞추어 구현한 것이므로 모두 버려야 한다.
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>하지만 예광탄 코드는 기능은 별로 없지만 완결된 코드이며, 최종 시스템 골격 중 일부가 된다.
+</span></code></pre></div>
+<h3 id="topic-13">Topic 13 프로토타입과 포스트잇</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>소프트웨어 프로토타입은 위험 요소를 분석하고 노출시킨 후, 이를 매우 저렴한 비용으로 바로잡을 기회를 얻는 것이다.
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>프로토타입을 반드시 코드로 작성해야 한다고 생각하기 쉬운데 꼭 그럴 필요는 없다.
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>포스트잇은 작업 흐름이나 애플리케이션 로직과 같이 동적인 것을 프로토타이핑할 수 있는 훌륭한 도구다.
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>사용자 인터페이스 프로토타입은 화이트보드에 그림을 그려서 만들 수도 있고, 그림판 프로그램, 인터페이스 빌더 등을 이용해 기능은 구현하지 않고 만들어 볼 수 있다.
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>프로토타입은 제한된 몇 가지 질문에 답하기 위한 것이므로 실제 제품보다 훨씬 좋은 비용으로 빠르게 개발할 수 있다.
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>여러분에게 당장 중요하지 않은 세부 사항이라면 추후에 사용자에게 매우 중요해질지도 모르지만 일단 무시하면서 코딩할 수 있다.
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>하지만 세부 사항을 포기할 수 없는 환경에 처해 있다면 예광탄 방식의 개발이 더 적절할 것이다.
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>프로토타이핑으로 조사할 대상의 예는 다음과 같다.
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>- 아키텍처
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>- 기존 시스템에 추가할 새로운 기능
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>- 외부 데이터의 구조 혹은 내용
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>- 외부에서 가져온 도구나 컴포넌트
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>- 성능 문제
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>- 사용자 인터페이스 설계
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>프로토타입을 만들 때 무시해도 좋은 세부 사항은 다음과 같다.
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>1. 정확성
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>2. 완전성
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>3. 안정성
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>4. 스타일
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>프로토타입을 코드로 만들 때는 시작하기 전에 항상 모든 사람에게 여러분이 폐기 처분할 코드를 작성하고 있다는 사실을 이해시켜야 한다.
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>프로토타입을 모르는 사람에게는 오해를 살 정도로 매력적일 수도 있기 때문이다.
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>그러므로 코드는 폐기할 것이고, 불완전하며, 완성할 수 없다는 사실을 분명히 주지시켜야 한다.
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>만약 여러분이 작업하는 환경이나 문화에서 프로토타입 코드의 목적이 잘못 해설될 가능성이 크다고 느낀다면 예광탄 접근 방식을 취하는 편이 나을 것이다.
+</span></code></pre></div>
+<h3 id="topic-14">Topic 14 도메인 언어</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>컴퓨터 언어는 여러분이 문제에 대해, 또 의사소통에 대해 생각하는 방식에 영향을 미친다.
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>모든 언어는 제각기 일련의 특징들을 내세운다. 정적 타입 대 동적 타입, 이른 바인딩 대 늦은 바인딩, 함수형 대 객체 지향, 상속 모델, 믹스인, 매크로와 같은 유행어를 들먹인다.
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>이런 특징들은 모두 어떤 해결 방안을 제시하기도 하지만 가려 버리기도 한다.
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>문제 도메인의 언어가 어떤 프로그래밍 해결 방안을 제안하기도 하는데, 우리 생각에는 이것이 프로그래밍 언어의 사고방식보다 더 중요하다.
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>실용주의 프로그래머라면 어떤 경우에는 한 차원 더 나아가서 그 도메인의 실제 어휘와 문법, 의미론을 (그 도메인의 언어를)사용해서 프로그래밍할 수도 있다. 
+</span></code></pre></div>
+<h3 id="topic-15">Topic 15 추정</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>추정하는 법을 배우고 추정 능력을 계발하여 무언가의 규모를 직관적으로 짚을 정도가 되면, 추정 대산의 가능성을 가늠하는 마법과 같은 능력을 발휘할 수 있게 될 것이다.
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>어떤 의미에서 모든 답은 추정치다. 단지 어떤 답이 다른 답보다 좀 더 정확할 뿐이다.
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>추정에서 한 가지 재미있는 사실은 사용하는 단위가 결과의 해석의 차이를 가져온다는 것이다.
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>만약 무언가를 끝내는 데 근무일 기준으로 약 130일 동안 일해야 한다고 말하면 듣는 사람은 실제 소요 기간이 추정과 상당히 비슷하리라 기대할 것이다.
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>하지만 &quot;아, 대략 6달 정도 걸리겠군요.&quot; 라고 말하면 지금부터 5~7달 사이 언젠자쯤 끝날 것이라 여길 것이다.
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>두 숫자는 같은 기간을 이야기하지만 &#39;130일&#39;은 실제 여러분의 느낌보다 더 정확도가 높으리라는 인상을 풍길 수 있다.
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>우리는 여러분이 기간을 추정할 때 다음과 같은 단위를 사용하기를 추천한다.
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>|1~15일  |일|
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>|3~6주   |주|
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>|8~20주  |달|
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>|20주 이상|추정치를 말하기 전에 다시 한번 생각해 보라.|
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>모든 추정치는 문제의 모델에 기반한다. 그런데 모델을 작성하는 기술에 대해 깊이 파고들기 전에 항상 좋은 답을 알려주는 기본적인 추정의 비법을 하나 밝히겠다.
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>이미 그 일을 해본 사람에게 물어보라. 똑같은 일을 해 본 사람을 찾기는 어렵겠지만, 놀라울 정도로 자주 다른 사람의 경험을 바탕으로 성공적인 추정치를 낼 수 있을 것이다.
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>어떤 종류의 추정을 하건 첫 단계는 상대방이 무엇을 묻고 있는지 이해하는 것이다.
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>정확도뿐 아니라 도메인에 존재하는 조건에 대해서도 감을 잡을 필요가 있다.
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>의뢰인의 요청을 이해한 후에는 간단하게 기본적인 것만 갖춘 개략적인 모델을 만들어 보라.
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>만약 응답 시간을 추정하고 있다면 여러분의 모델에는 서버와 서버에 도달하는 몇 가지 트래픽이 있어야 할 것이다.
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>프로젝트를 진행하고 있다면, 모델은 여러분의 조직이 개발하는 동안 사용할 발판이 될 뿐 아니라 시스템을 어떻게 구현해야 할지에 대한 밑그림을 제공해 줄 것이다.
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>모델을 만들어 추정을 하면 그 결과는 부정확해질 수밖에 없다. 하지만 이는 피할 수 없는 일이며, 또한 유익한 일이기도 하다.
+</span></code></pre></div>
+<h2 id="3">3장 기본 도구</h2>
+<h3 id="topic-16">Topic 16 일반 텍스트의 힘</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>우리가 수집하는 요구 사항은 지식이고, 우리는 그 지식을 설계와 구현, 테스트, 문서로 표현한다.
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>그리고 우리는 지식을 저장하는 최고의 포맷이 일반 텍스트라고 믿는다.
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>일반 텍스트를 사용하면 수작업으로든 프로그램으로든 동원 가능한 거의 모든 도구로 지식을 다룰 수 있게 된다.
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>HTML, JSON, YAML, HTTP, SMTP, IMAP 도 일반 텍스트다. 이것들이 널리 쓰이는 이유는 다음과 같다.
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>- 지원 중단에 대한 보험
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>- 기존 도구의 활용
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>- 더 쉬운 테스트
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>다양한 시스템이 섞인 환경에서는 일반 텍스트의 장점이 다른 모든 단점을 보상하고도 남는다.
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>여러분은 모든 참가자가 하나의 공통 표준을 사용해서 소통하도록 해야 한다. 일반 텍스트가 바로 그 표준이다.
+</span></code></pre></div>
+<h3 id="topic-17">Topic 17 셀 가지고 놀기</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>셸에서 응용 프로그램이나 디버거, 브라우저, 에디터, 유틸리티를 실행할 수 있다. 파일을 검색할 수 있고, 시스템의 상태를 조회할 수 있으며, 출력을 필터링할 수 있다.
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>또한 셸을 프로그래밍해서 자주 수행하는 작업을 수월하게 해 주는 복잡한 매크로 명령을 만들 수 있다.
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>GUI 나 IDE 로 간단한 조작에는 더 빠르고 편리할 수 있지만 위에 있는 일부 작업은 진행할 수 없다.
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>GUI 환경의 기능은 일반적으로 설계자가 의도한 범위를 넘어설 수 없다.
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>에컨대, 여러분이 계약에 의한 설계, 다중 처리 프라그마 등을 구현하기 위해 IDE 에 코드 전처리기를 추가해야 한다고 가정해 보자.
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>IDE 설계자가 이런 경우를 명시적으로 훅을 제공하지 않았다면 추가가 불가능하다.
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>셸에 익숙해지면 여러분의 생산성이 급상승할 것이다.
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>목수가 작업 공간을 자신에게 맞추어 바꾸듯이 개발자도 셸을 자신에게 맞추어야 한다. 때로는 여러분이 사용하는 터미널 프로그램의 설정을 바꾸어야 할 수도 있다.
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>보통 다음 사항들을 바꾼다.
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>- 색깔 조합 설정
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>- 프롬프트 설정
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>- 별칭과 셸 함수
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>- 명령어 자동 완성
+</span></code></pre></div>
+<h3 id="topic-18">Topic 18 파워 에디팅</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>왜 에디터에 유창해지는 것이 중요할까? 시간을 많이 절약할 수 있어서일까? 사실 그렇기도 하다.
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>일주일에 에디터를 20시간 사용하다고 치면 속도가 4%만 빨라져도 1년이면 일주일만큼의 업무 시간을 아낄 수 있다.
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>유창해지는 것의 가장 큰 이점은 더는 에디터 사용법을 생각하지 않아도 된다는 것이다.
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>뭔가를 생각하는 것에서 에디터 화면에 그게 뜰 때까지의 거리가 확 줄어든다. 생각이 자유롭게 흐를 것이고 프로그래밍에 큰 도움이 될 것이다.
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>에디터의 모든 명령어를 외우는 것은 불가능에 가깝기에 우리는 더 실용적인 접근 방법을 제안한다.
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>먼저 여러분이 에디터를 사용하는 모습을 관찰하라. 무언가 같은 일을 반복하는 것을 발견할 때마다 더 나은 방법이 있을지 찾아보라.
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>유용한 기능을 찾았다면 몸이 기억하도록 만들어야 한다. 그래야 반사적으로 사용할 수 있다. 우리가 아는 유일한 방법은 반복이다.
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>사용 중인 에디터에서 명백한 한계에 봉착한다면 필요한 기능을 추가하는 확장 기능을 찾아보라.
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>한 걸음 더 나아가 사용하는 에디터의 확장 기능 언어를 파헤쳐 보라. 여러분이 늘 하는 반복적인 일을 자동화할 방법을 연구해 보라.
+</span></code></pre></div>
+<h3 id="topic-19">Topic 19 버전 관리</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>버전 관리 시스템(VCS) 은 일종의 거대한 &#39;실행 취소&#39; 키와 같다. 
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>프로젝트 전체에 걸쳐서 코드가 실제로 컴파일되고 실행되던 지난주의 평화로운 시절로 돌려줄 수 있는 타임머신이다.
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>VCS 는 소스 코드나 문서의 모든 변경 사항을 기억하기에 실수를 되돌리는 것 외에도 아주 많은 일을 한다.
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>좋은 VCS 를 사용하면 코드의 이 줄을 누가 바꿨는지, 현재 버전과 지난 버전은 어디가 다른지 등 다양한 변경 사항을 추적 할 수 있다.
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>둘 이상의 사용자가 동일한 파일들을 동시에 작업 할 수도 있다. 파일을 저장소로 보낼 때 시스템이 수정 사항들을 합쳐 준다.
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>한 주짜리 프로젝트도, 프로토타입도, 소스 코드가 아니더라도 모든 것을 버전 관리 아래에 둬라.
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>VCS 의 매우 강력하고 유용한 기능으로, 개발 중인 내용을 섬처럼 따로 떼어 격리하는 &#39;브랜치&#39;가 있다.
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>브랜치에서 작업한 내용은 다른 브랜치로부터 격리되지만, 작업한 브랜치를 나중에 다른 브랜치로 &#39;병합&#39;할 수도 있다.
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>그러면 브랜치에서 작업한 내용이 다른 브랜치에도 들어간다. 여러 사람이 하나의 브랜치에서 함께 작업할 수도 있다.
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>브랜치의 장점 중에 다른 브랜치로부처 격리되어 내가 기능 A 를 개발하는 동알 동료는 다른 브랜치에서 기능 B 를 작업 할 수 있다.
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>또 다른 장점은 브랜치가 팀의 프로젝트 업무 흐름에서 핵심이 되는 경우가 많다는 것이다.
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>버전 관리는 팀에서 사용할 때 그 진가가 드러난다.
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>오늘날 VCS 는 대부분 꼭 별도로 서버를 두지 않아도 된다. 완전히 분산시켜서 개발자 개개인이 점 대 점 방식으로 협업할 수도 있다.
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>하지만 중앙 저장소가 있으면 프로젝트 업무 흐름을 원활하게 해 주는 수많은 확장 기능을 이용할 수 있다.
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>- 확실한 보안과 권한 관리
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>- 직관적인 UI
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>- 명령 줄에서도 모든 작업 수행 가능
+</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>- 자동화된 빌드와 테스트
+</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>- 브랜치 병합 (PR) 을 잘 지원
+</span><span id="__span-18-34"><a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a>- 이슈 관리
+</span><span id="__span-18-35"><a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a>- 적절한 보고서 기능
+</span><span id="__span-18-36"><a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a>- 원활한 팀 의사소통을 돕는 기능
+</span><span id="__span-18-37"><a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a>
+</span><span id="__span-18-38"><a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a>VCS 를 다음과 같이 설정해 놓은 팀이 많다. 
+</span><span id="__span-18-39"><a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a>
+</span><span id="__span-18-40"><a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a>특정 브랜치에 푸시를 하면 시스템을 빌드하고, 테스트를 수행한 다음, 테스트가 성공하면 새로운 코드를 서비스에 배포한다.
+</span></code></pre></div>
+<h3 id="topic-20">Topic 20 디버깅</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>디버깅은 많은 개발자에게 예민하고 감성적인 주제다. 디버깅은 단지 문제 풀이일 뿐이라는 사실을 받아들이고, 그런 마음으로 공략하라.
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>다른 사람의 버그를 발견하더라도 비난하지말고 문제를 고치는 데에 집중해야 한다.
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>누구의 잘못인지는 중요치 않다. 그 버그를 해결해야 하는 사람은 여러분이다.
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>디버깅할 때 근시안의 함정에 주의하라. 표면에 보이는 증상만 고치려는 욕구를 이겨 내라.
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>실제 문제는 여러분 눈앞에 있는 것에서 몇 단계 떨어져있고, 또 다른 여러 가지와 연관되어 있을 확률이 다분하다.
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>문제의 근본 원인을 찾으려고 노력하라.
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>버그를 살펴보기 전에 작업 중인 코드가 경고 없이 깨끗하게 빌드되는지부터 확인하라.
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>컴퓨터가 대신 찾아 줄 수 있는 문제를 여러분이 찾느라 시간을 허비하지 마라.
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>버그를 고치는 첫걸음으로 가장 좋은 것은 그 버그를 재현할 수 있게 만드는 것이다. 코드를 고치기 전 실패하는 테스트부터 하라.
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>디버거를 붙인 다음 여러분의 실패하는 테스트를 이용하여 문제를 재현하라. 무엇보다 먼저 디버거에 잘못된 값이 나타나는지부터 확인하라.
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>만약 특정한 데이터 세트만 들어오면 죽어 버리는 경우라면 데이터 세트를 복사하여 개발 환경에서 실행시켜서 프로그램이 죽는지 확인하라.
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>프로그램이 죽는다면 이진 분할을 활용해서 정확히 어떤 입력값이 범인인지 찾아내라.
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>OS나 컴파일러 혹은 외부 제품에 버그가 있을 수도 있지만 처음부터 그런 생각을 하지는 말라.
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>만약 여러분이 단 하나만 변경했는데 시스템이 작동을 멈춘다면 설사 아무 관련이 없어 보여도 십중팔구 직접적이든 간접적이든 변경한 그 하나에 책임이 있다.
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
+</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>버그와 관련된 루틴이나 코드가 제대로 작동하는 걸 안다고 해서 대충 얼버무리고 지나치지 말라. 그것을 증명하라.
+</span></code></pre></div>
+<h3 id="topic-21">Topic 21 텍스트 처리</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>프로그래밍에서 텍스트 처리 언어는 목공에서 router (절단 날이 매우 빠르게 돌아가는 도구)와 같다.
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>사용하다가 실수라도 하면 재료 전체를 망아트릴 수 있고, 어떤 사람들은 자신의 도구 상자에 이따위 도구는 둘 수 없다고 큰소리치기도 한다.
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>하지만 제대로 사용하기만 한다면 router 와 텍스트 처리 언어 둘 다 믿기 힘들 정도로 강력하고 쓰임새가 다양하다.
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>뭔가를 재빨리 원하는 모양으로 잘라 내거나, 연결 부위를 만들고, 또 깎아 낼 수 있다.
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>적절히 사용하면 이 도구들은 놀라울 정도로 예리하고 섬세하다.
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>다행히도 훌륭한 텍스트 처리 언어가 많이 있다. 유닉스나 맥을 사용하는 개발자들은 명령어 셸의 능력을 즐겨 활용하는 경우가 많은데,
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>여기에 awk나 sed와 같은 도구를 결합하여 사용하기도 한다.
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>좀 더 체계적인 도구를 선호하는 사람들은 파이썬이나 루비 같은 프로그래밍 언어를 더 좋아한다.
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>이런 언어들은 중요한 기반 기술이다. 이들을 사용해서 유틸리티를 뚝딱 만들어 낼 수도 있고, 아이디어를 프로토타입해 볼 수도 있다.
+</span></code></pre></div>
+<h3 id="topic-22">Topic 22 엔지니어링 일지</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>회의에서 메모할 때나 작업하는 내용을 써 놓을 때, 디버깅하다가 변수의 값을 적어 놓을 때 등 우리는 일지를 사용한다.
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>일지를 쓰면 좋은 점이 크게 세 가지 있다.
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>- 기억보다 더 믿을 만하다.
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>- 진행 중인 작업과 직접적인 관계가 없는 발상을 일단 쌓아 놓을 수 있는 곳이 생긴다.
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>- 하던 일을 돌아보기에 알맞은 기회가 생긴다.
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>그러니 엔지니어링 일지를 남겨 보라. 파일이나 위키말고 종이를 사용하라.
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>글씨를 쓰는 것은 키보드를 두드리는 것과는 다른 무언가 특별한 것이 있다.
+</span></code></pre></div>
+<h2 id="4">4장 실용주의 편집증</h2>
+<h3 id="topic-23">Topic 23 계약에 의한 설계</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>버트런드 마이어는 에펠 이라는 언어를 만들면서 계약에 의한 설계 개념을 개발했다.
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>DBC ( Design By Contract) 는 단순하지만 강력한 기법으로, 프로그램의 정확성을 보장하기 위해 소프트웨어 모듈의 권리와 책임을 문서화하고 합의하는 데에 초점을 맞춘다.
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>소프트웨어 시스템의 모든 함수와 메서드는 뭔가를 한다. 그 뭔가를 시작하기 전에 해당 함수는 세상의 상태에 대해 어떤 전제 조건을 갖고 있을 테고,
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>루틴이 끝난 후에는 세상의 상태가 어떠할 것이라고 선언할 수 있을 것이다. 마이어는 이런 전제와 선언을 다음과 같이 설명한다.
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>- 선행 조건 : 루틴이 호출되기 위해 참이어야 하는 것
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>- 후행 조건 : 루틴이 자기가 할 것이라고 보장하는 것
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>- 클래스 불변식 : 호출자의 입장에서 볼 때는 이 조건이 언제나 참인 것을 클래스가 보장
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>루틴과 그 루틴을 호출하려는 코드 간의 계약은 다음과 같다.
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>    만약 호출자가 루틴의 모든 선행 조건을 충족한다면 해당 루틴은 종료 시 모든 후행 조건과 불변식이 참이 되는 것을 보장한다
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>만약 계약 당사자 중 어느 한쪽이라도 이 계약 내용을 지키지 못하면 해결 방안이 실행된다.
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>예외가 발생할 수도 있고 아니면 프로그램을 종료시킬 수도 있다. 무슨 일이 벌어지든지 확실한 점은 계약에 부응하지 못하는 것은 버그라는 것이다.
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>이것은 결코 발생해서는 안 되는 일이며, 그렇기 때문에 선행 조건을 이용해서 사용자 입력값을 검증한다거나 해서는 안 된다.
+</span></code></pre></div>
+<h3 id="topic-24">Topic 24 죽은 프로그램은 거짓말을 하지 않는다</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>&#39;그런 일은 절대 일어날 리 없어.&#39; 라는 사고에 빠지기 쉽다.
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>우리 중 대다수가 코드를 작성할 때 파일이 성공적으로 닫혔는지, 혹은 트레이스 문이 우리 예상대로 찍혔는지 확인하지 않았던 적이 있을 것이다.
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>그리고 다른 모든 조건이 늘 그대로라면 그럴 필요가 없었을지도 모른다. 문제의 코드는 정상적인 상황에서는 실패하지 않았을 것이다.
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>하지만 우리는 지금 방어적으로 코딩하고 있다. 데이터가 우리가 생각하는 대로인지, 서비스에서 작동하는 코드가 우리가 생각하는 그 코드인지 확인해야 한다.
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>모든 오류는 정보를 준다. 여러분은 오류가 발생할 리 없다고 자신을 설득하고선 그걸 무시하기로 할 수도 있다.
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>반면에 실용주의 프로그래머는 만약 오류가 발생했다면 정말로 뭔가 나쁜 일이 생긴 것이라고 자신에게 이야기한다.
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>일단 그놈의 오류 메시지 좀 읽어라.
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>가능한 한 빨리 문제를 발견하면 좀 더 일찍 시스템을 멈출 수 있으니 더 낫다. 게다가 프로그램을 멈추는 것이 할 수 있는 최선인 경우가 흔하다.
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>다른 대안이라곤 깨진 데이터를 중요한 데이터베이스에 기록하거나, 세탁기에 스무 번 연속으로 탈수 명령을 내리면서 계속 진행하는 것뿐이다.
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>어떤 환경에서는 실행 중인 프로그램을 그냥 종료해 버리는 것이 적절치 못할 수도 있다. 
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>해제되지 않은 리소스가 남아 있을 수도 있고, 로그 메시지를 기록해야 할 수도 있고, 열려 있는 프랜잭션을 정리해야 하거나 다른 프로세스와의 상호작용이 필요할지도 모른다.
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>그렇지만 기본 원칙은 똑같다. 방금 있을 수 없는 일이 발생했다는 것을 코드가 발견했다면 프로그램은 더는 유효하지 않다고 할 수 있다.
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>이 시점 이후로 하는 일은 모두 수상쩍은 게 된다. 되도록 빨리 종료할 일이다.
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>일반적으로 죽은 프로그램이 끼치는 피해는 이상한 상태의 프로그램이 끼치는 피해보다 훨씬 적은 법이다.
+</span></code></pre></div>
+<h3 id="topic-25">Topic 25 단정적 프로그래밍</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>모든 프로그래머가 자기 경력을 쌓는 초기부터 암기해야 하는 계명이 있는 것 같다.
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>요구 사항, 설계, 코드, 주석 등 우리가 하는 거의 모든 것에 적용하도록 배우는 컴퓨팅의 근본 교리이자 핵심적 믿음이다.
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>그것은 이렇게 시작한다. &quot;그런 일은 절대 일어날 리 없어&quot;
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>이런 식으로 자신을 기만하지 말자, 특히 코딩할 때는.
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>&#39;하지만 물론 그런 일은 절대 일어나지 않을 거야.&#39; 라는 생각이 든다면 그런 일을 확인하는 코드를 추가하라.
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>가장 간단하게 추가하는 방법은 단정문을 사용하는 것이다. 대부분의 언어 구현에서 조건이 참인지 거짓인지 확인하는 assert의 일종을 찾을 수 있을 것이다.
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>이런 단정문은 엄청나게 유용하다. 매개 변수나 결과가 절대 null이어서는 안 된다면 명시적으로 검사하라.
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>하지만 진짜 오류 처리를 해야 하는 곳에 단정을 대신 사용하지는 말라. 단정은 결코 일어나면 안 되는 것을 검사한다.
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>문제를 발견하려고 넣은 코드가 오히려 새로운 문제를 만드는 결과를 낳는다면 상당히 당황스러울 것이다.
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>단정문을 쓸 때도 조건을 평가하는 코드에 부작용이 있다면 이런 일이 발생할 수 있다.
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>프로그램을 출시할 때 단정 기능을 꺼 버리는 것은 줄타기 곡예를 하면서 연습으로 한 번 건너 봤다고 그물 없이 건너는 것과 비슷하다.
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>성능 문제가 있다 하더라도 정말 문제가 되는 단정문만 끄도록 하자.
+</span></code></pre></div>
+<h3 id="topic-26">Topic 26 리소스 사용의 균형</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>우리는 코딩할 때 언제나 리소스를 관리한다. 메모리, 트랜잭션, 스레드, 네트워크 연결, 파일, 타이머 등 무한히 사용할 수 없는 모든 종류의 것을 관리한다.
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>대개 리소스 사용은 예상 가능한 패턴을 따른다. 리소스를 할당하고, 사용한 다음, 해제한다.
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>그렇지만 많은 개발자가 리소스 할당과 해제를 다루는 일관된 방침을 갖고 있지 않다. 그래서 우리는 간단한 팁 하나를 제안하고자 한다.
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>&#39;자신이 시작한 것은 자신이 끝내라.&#39;
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>리소스를 할당하는 함수나 객체가 리소스를 해제하는 책임 역시 져야 한다는 뜻일 뿐이다.
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>리소스 할당의 기본 패턴을 확장해서 한 번에 여러 리소스를 사용하는 루틴에 적용할 수 있다.
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>&#39;리소스를 할당한 순서의 역순으로 해제하라.&#39;
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>&#39;코드의 여러 곳에서 동일한 구성의 리소스들을 할당하는 경우에는 언제나 같은 순서로 할당해야 교착 가능성을 줄일 수 있다.&#39;
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>예외를 지원하는 언어에서는 리소스 해제가 골치 아플 수 있다. 예외가 던져진 경우 예외 발생 이전에 할당된 모든 것이 깨끗이 청소된다고 어떻게 보장할 수 있을까?
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>이 물음의 답은 언어에 따라 달라지는데, 일반적으로 두 가지 방식이 있다.
+</span><span id="__span-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
+</span><span id="__span-25-21"><a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>1. 변수 스코프를 사용한다. (C++, Rust 의 스택 변수)
+</span><span id="__span-25-22"><a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>2. try ~ catch 블록에서 finally 절을 사용한다.
+</span><span id="__span-25-23"><a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
+</span><span id="__span-25-24"><a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>리소스 할당 패턴이 아예 맞지 않는 경우도 있다. 보통 동적인 자료 구조를 사용하는 프로그램에서 이런 일이 많이 생긴다.
+</span><span id="__span-25-25"><a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>
+</span><span id="__span-25-26"><a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>한 루틴에서 메모리의 일정 영역을 할당한 다음 어떤 더 큰 구조에 그것을 연결한 후, 한동안 그대로 쓰는 식이다.
+</span><span id="__span-25-27"><a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>
+</span><span id="__span-25-28"><a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>이런 경우의 요령은 메모리 할당에 대한 의미론적 불변식을 정하는 것이다. 한군데 모은 자료 구조 안의 자료를 누가 책임지는지 정해 놓아야 한다.
+</span><span id="__span-25-29"><a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>
+</span><span id="__span-25-30"><a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>자료 구조에서 최상위 구조의 메모리 할당을 해제할 경우 어떻게 처리해야 할까? 크게 세 가지 방법이 있다.
+</span><span id="__span-25-31"><a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>
+</span><span id="__span-25-32"><a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a>&#39;최상위 구조가 자기 안에 들어 있는 하위 구조들을 해제할 책임을 진다.&#39;
+</span><span id="__span-25-33"><a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>&#39;최상위 구조가 그냥 할당 해제된다.&#39;
+</span><span id="__span-25-34"><a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a>&#39;최상위 구조가 하나라도 하위 구조를 가지고 있으면 자신의 할당 해제를 거부한다.&#39;
+</span></code></pre></div>
+<h3 id="topic-27">Topic 27 헤드라이트를 앞서가지 말라</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>소프트웨어 개발에서도 우리의 &#39;헤드라이트&#39;는 제한되어 있다. 우리는 너무 먼 미래는 내다볼 수 없고, 정면에서 벗어난 곳일수록 더 어둡다.
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>그래서 실용주의 프로그래머에게는 확고한 규칙이 있다.
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>&#39;작은 단계들을 밟아라. 언제나.&#39;
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>언제나 신중하게 작은 단계들을 밟아라. 더 진행하기 전에 피드백을 확인하고 조정하라.
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>피드백의 빈도를 여러분의 제한 속도라고 생각하라. 너무 큰 단계나 작업은 하지 않게 될 것이다.
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>불확실한 미래에 대비한 설계를 하느라 진을 빼는 대신 언제나 교체 가능한 코드를 작서하여 대비하면 된다.
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>여러분의 코드를 더 적절한 무언가로 대체하기 쉽게 설계하라.
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>코드를 교체할 수 있도록 하면 응집도나 결합도, DRY에도 도움이 되고, 전반적으로 더 나은 설계가 탄생할 것이다.
+</span></code></pre></div>
+<h2 id="5">5장 구부리거나 부러지거나</h2>
+<h3 id="topic-28">Topic 28 결함도 줄이기</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>높은 결합도는 변경의 적이다. 결합도가 높으면 이리저리 연결되어 있어서 여러 가지를 동시에 바꿔야 하기 때문이다. 그래서 바꾸기 더 어려워진다.
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>다리를 설계할 때는 그 형태가 바뀌지 않기를 바랄 것이다. 따라서 구조가 단단해야 한다.
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>하지만 소프트웨어를 설계할 때는 언젠가 형태를 바꾸려 할 것이다. 바라는 것이 정확히 반대다. 소프트웨어의 구조는 유연해야 한다.
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>여러분의 코드에서 나타나는 다음과 같은 결합의 증상을 놓치지 않도록 주의해야 한다.
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>- 관계없는 모듈이나 라이브러리 간의 희한한 의존 관계
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>- 한 모듈의 간단한 수정이 이와 관계없는 모듈을 통해 시스템 전역으로 퍼져 나가거나 시스템의 다른 곳에서 무언가를 깨뜨리는 경우
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>- 개발자가 수정하는 부분이 시스템에 어떤 영향을 미칠지 몰라 코드의 수정을 두려워하는 경우
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>- 변경 사항에 누가 영향을 받는지 파악하고 있는 사람이 없어서 결국 모든 사람이 참석해야 하는 회의
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>어디서나 접근할 수 있는 데이터는 교묘하게 애플리케이션 컴포넌트 간의 결합을 만들어 낸다.
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>전역 데이터 하나하나는 애플리케이션의 모든 메서드에 갑자기 매개 변수가 추가된 것과 같은 효과를 낸다.
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>전역 데이터는 모든 메서드 안에서 사용할 수 있으니 말이다.
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>전역 데이터는 여러 가지 방법으로 코드의 결합도를 높인다. 전역 데이터의 구현을 변경할 때 시스템 코드 전체에 영향을 줄 수 있음은 분명하다.
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>물론 실제 상황에서 그 파급 효과는 제한적이다. 하지만 문제는 바꿔야 하는 곳을 모두 바꿨는지 확인하기 힘들다는 데 있다.
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>결합된 코드는 바꾸기 힘들다. 코드의 한 곳을 바꾸면 다른 곳에 여파가 미칠 수 있다.
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>가끔은 찾기 힘든 곳에 문제가 생기는 바람에 한 달 후에나 서비스에 오류가 발생하면서 문제의 실상이 드러나기도 한다.
+</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>
+</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>직접적으로 아는 것만 다루는 부끄럼쟁이 코드를 계속 유지하라. 그러면 애플리케이션의 결합도를 낮게 유지할 수 있을 것이고, 결과적으로 코드를 바꾸기 쉬워질 것이다.
+</span></code></pre></div>
+<h3 id="topic-29">Topic 29 실세계를 갖고 저글링하기</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>오늘날 우리는 더 많은 것을 기대한다. 사람이 컴퓨터에 맞추기보다는 컴퓨터가 우리 세계 안으로 들어와야 한다.
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>그리고 우리 세계는 엉망이다. 끊임없이 사건이 일어나고, 물건들은 사방으로 이동하며, 사람들은 생각을 바꾼다.
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>그리고 우리가 작성하는 애플리케이션은 맡은 일을 어떻게든 수행해야 한다.
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>이벤트는 무언가 정보가 있다는 것을 의미한다. 정보는 사용자가 버튼을 클릭하거나, 주가 정보가 갱신될 때처럼 외부에서 올 수 있다.
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>정보는 내부에서 생길 수도 있다. 계산 결과가 나왔거나, 검색 작업이 끝날을 수도 있고, 리스트에서 다음 원소을 가져오는 것처럼 사소한 것일 수도 있다.
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>어디에서 온 것이든 애플리케이션을 이런 이벤트에 반응하도록, 그리고 그에 기반해서 하는 일을 조절하도록 만들면, 진짜 세상에서 더 잘 작동하는 애플리케이션이 탄생할 것이다.
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>그런데 어떻게 이벤트에 잘 반응하는 애플리케이션을 만들 수 있을까? 우리를 도와줄 네 가지 전략이 있다.
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>1. 유한 상태 기계 (Finite State Machine)
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>대부분의 경우 FSM 구현은 고작 몇 줄에 불과하지만, 그 덕분에 엄청난 난장판을 만들지 않을 수 있다.
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>FSM은 정말 쓰게 쉬운데도 많은 개발자가 사용을 꺼린다. 기본적으로 상태 기계는 이벤트를 어떻게 처리할지 정의한 명세일 뿐이다.
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>
+</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>정해진 상태들이 있고 그중 하나가 &#39;현재 상태&#39;다. 상태마다 그 상태일 때 의미가 있는 이벤트를 나열하고, 이벤트별로 시스템의 다음 &#39;현재 상태&#39;를 정의한다.
+</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>
+</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>상태 기계는 개발자들에게 저평가되어 있다. 여러분이 상태 기계를 적용할 수 있는 곳을 한번 찾아보면 좋겠다.
+</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>
+</span><span id="__span-28-25"><a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>하지만 상태 기계가 이벤트와 관련된 모든 문제를 해결하지는 못한다.
+</span><span id="__span-28-26"><a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a>
+</span><span id="__span-28-27"><a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>2. 감시자 패턴
+</span><span id="__span-28-28"><a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a>
+</span><span id="__span-28-29"><a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a>감시자 패턴은 이벤트를 발생시키는 쪽인 감시 대상과 이런 이벤트에 관심이 있는 클라이언트인 감시자로 이루어진다.
+</span><span id="__span-28-30"><a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a>
+</span><span id="__span-28-31"><a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a>감시자는 자신이 관심 있는 이벤트를 감시 대상에 등록한다. 보통은 호출될 함수의 참조도 등록할 때 함께 넘긴다.
+</span><span id="__span-28-32"><a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a>
+</span><span id="__span-28-33"><a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a>나중에 해당 이벤트가 발생하면 감시 대상은 등록된 감시자 목록을 보면서 함수들을 일일이 호출한다. 이때, 발생한 이벤트를 감시자 함수의 인자로 넘긴다.
+</span><span id="__span-28-34"><a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a>
+</span><span id="__span-28-35"><a id="__codelineno-28-35" name="__codelineno-28-35" href="#__codelineno-28-35"></a>감시자-감시 대상 패턴은 수십 년간 쓰여 왔고, 잘 작동했다.
+</span><span id="__span-28-36"><a id="__codelineno-28-36" name="__codelineno-28-36" href="#__codelineno-28-36"></a>
+</span><span id="__span-28-37"><a id="__codelineno-28-37" name="__codelineno-28-37" href="#__codelineno-28-37"></a>특히 사용자 인터페이스 시스템에서 널리 쓰이는데, 어떤 상호 작용이 일어났다는 것을 애플리케이션에 콜백으로 알려주는 방식을 사용한다.
+</span><span id="__span-28-38"><a id="__codelineno-28-38" name="__codelineno-28-38" href="#__codelineno-28-38"></a>
+</span><span id="__span-28-39"><a id="__codelineno-28-39" name="__codelineno-28-39" href="#__codelineno-28-39"></a>하지만 감시자 패턴에는 문제가 하나 있다. 모든 감시자가 감시 대상에 등록을 해야 하기 때문에 결합이 생긴다.
+</span><span id="__span-28-40"><a id="__codelineno-28-40" name="__codelineno-28-40" href="#__codelineno-28-40"></a>
+</span><span id="__span-28-41"><a id="__codelineno-28-41" name="__codelineno-28-41" href="#__codelineno-28-41"></a>더군다나 일반적으로 감시 대상이 콜백을 직접 호출하도록 구현하기 때문에 이 부분이 성능 병목이 될 수 있다.
+</span><span id="__span-28-42"><a id="__codelineno-28-42" name="__codelineno-28-42" href="#__codelineno-28-42"></a>
+</span><span id="__span-28-43"><a id="__codelineno-28-43" name="__codelineno-28-43" href="#__codelineno-28-43"></a>동기적 처리의 특성상 콜백 실행이 끝날 때까지 감시 대상이 계속 기다려야 하기 때문이다. 이 문제는 게시-구독으로 해결한다.
+</span><span id="__span-28-44"><a id="__codelineno-28-44" name="__codelineno-28-44" href="#__codelineno-28-44"></a>
+</span><span id="__span-28-45"><a id="__codelineno-28-45" name="__codelineno-28-45" href="#__codelineno-28-45"></a>3. 게시-구독
+</span><span id="__span-28-46"><a id="__codelineno-28-46" name="__codelineno-28-46" href="#__codelineno-28-46"></a>
+</span><span id="__span-28-47"><a id="__codelineno-28-47" name="__codelineno-28-47" href="#__codelineno-28-47"></a>게시-구독 혹은 발행-구독 모델은 줄여서 펍섭이라고도 부르며 감시자 패턴을 일반화한 것이다. 동시에 감시자 모델의 결합도를 높이는 문제와 성능 문제도 해결한다.
+</span><span id="__span-28-48"><a id="__codelineno-28-48" name="__codelineno-28-48" href="#__codelineno-28-48"></a>
+</span><span id="__span-28-49"><a id="__codelineno-28-49" name="__codelineno-28-49" href="#__codelineno-28-49"></a>게시-구독 모델에는 게시자와 구독자가 있고, 이들은 채널로 연결된다. 채널은 별도의 코드로 구현되는데, 라이브러리인 경우도 있고 프로세스 혹은 분산 인프라인 경우도 있다.
+</span><span id="__span-28-50"><a id="__codelineno-28-50" name="__codelineno-28-50" href="#__codelineno-28-50"></a>
+</span><span id="__span-28-51"><a id="__codelineno-28-51" name="__codelineno-28-51" href="#__codelineno-28-51"></a>각 채널에는 이름이 있다. 구독자는 관심사를 하나 이상의 채널에 등록하고, 게시자는 채널에 이벤트를 보낸다.
+</span><span id="__span-28-52"><a id="__codelineno-28-52" name="__codelineno-28-52" href="#__codelineno-28-52"></a>
+</span><span id="__span-28-53"><a id="__codelineno-28-53" name="__codelineno-28-53" href="#__codelineno-28-53"></a>감시자 패턴과는 다르게 게시자와 구독자 사이의 통신은 여러분의 코드 밖에서 일어난다. 아마 비동기적으로 이루어질 것이다.
+</span><span id="__span-28-54"><a id="__codelineno-28-54" name="__codelineno-28-54" href="#__codelineno-28-54"></a>
+</span><span id="__span-28-55"><a id="__codelineno-28-55" name="__codelineno-28-55" href="#__codelineno-28-55"></a>단점은 게시-구독 모델을 아주 많이 사용하는 시스템에서는 현재 어떤 일이 벌어지고 있는지 파악하기 힘들다는 것이다.
+</span><span id="__span-28-56"><a id="__codelineno-28-56" name="__codelineno-28-56" href="#__codelineno-28-56"></a>
+</span><span id="__span-28-57"><a id="__codelineno-28-57" name="__codelineno-28-57" href="#__codelineno-28-57"></a>4. 반응형 프로그래밍과 스트림
+</span><span id="__span-28-58"><a id="__codelineno-28-58" name="__codelineno-28-58" href="#__codelineno-28-58"></a>
+</span><span id="__span-28-59"><a id="__codelineno-28-59" name="__codelineno-28-59" href="#__codelineno-28-59"></a>이벤트를 사용하여 코드가 반응하도록 할 수 있다는 것은 명백하다. 하지만 이벤트를 이리저리 연결하는 것도 쉽지만은 않다. 그래서 스트림이 필요하다.
+</span><span id="__span-28-60"><a id="__codelineno-28-60" name="__codelineno-28-60" href="#__codelineno-28-60"></a>
+</span><span id="__span-28-61"><a id="__codelineno-28-61" name="__codelineno-28-61" href="#__codelineno-28-61"></a>스트림은 이벤트를 일반적인 자료 구조처럼 다룰 수 있게 해 준다. 이벤트의 리스트를 다룬다고 생각하면 된다.
+</span><span id="__span-28-62"><a id="__codelineno-28-62" name="__codelineno-28-62" href="#__codelineno-28-62"></a>
+</span><span id="__span-28-63"><a id="__codelineno-28-63" name="__codelineno-28-63" href="#__codelineno-28-63"></a>새로운 이벤트가 도착하면 이 리스트가 길어지는 셈이다. 이런 방식이 좋은 이유는 익숙한 방식으로 스트림을 다룰 수 있기 때문이다.
+</span><span id="__span-28-64"><a id="__codelineno-28-64" name="__codelineno-28-64" href="#__codelineno-28-64"></a>
+</span><span id="__span-28-65"><a id="__codelineno-28-65" name="__codelineno-28-65" href="#__codelineno-28-65"></a>이벤트를 처리하고, 조합하고, 골라내는 등 우리가 아는 온갖 작업을 일반적인 자료 구조와 마찬가지 방법으로 할 수 있다.
+</span><span id="__span-28-66"><a id="__codelineno-28-66" name="__codelineno-28-66" href="#__codelineno-28-66"></a>
+</span><span id="__span-28-67"><a id="__codelineno-28-67" name="__codelineno-28-67" href="#__codelineno-28-67"></a>심지어 이벤트 스트림과 일반 자료 구조를 조합할 수도 있다. 또한 스트림은 비동기적으로 작동할 수도 있는데, 이벤트가 도착했을 때 여러분의 코드가 이벤트에 응답할 기회를 얻는다.
+</span><span id="__span-28-68"><a id="__codelineno-28-68" name="__codelineno-28-68" href="#__codelineno-28-68"></a>
+</span><span id="__span-28-69"><a id="__codelineno-28-69" name="__codelineno-28-69" href="#__codelineno-28-69"></a>이벤트는 모든 곳에 있다. 몇 가지는 뻔하다. 마우스 버튼을 클릭하거나 타이머가 울린다. 하지만 그렇게 뻔하지 않은 경우도 있다. 누군가가 로그인하거나 파일의 특정 줄이 패턴과 일치한다.
+</span><span id="__span-28-70"><a id="__codelineno-28-70" name="__codelineno-28-70" href="#__codelineno-28-70"></a>
+</span><span id="__span-28-71"><a id="__codelineno-28-71" name="__codelineno-28-71" href="#__codelineno-28-71"></a>하지만 이벤트가 어디서 발생하든 이벤트를 중심으로 공들여 만든 코드는 일직선으로 수행되는 코드보다 더 잘 반응하고 결합도가 더 낮다.
+</span></code></pre></div>
+<h3 id="topic-30">Topic 30 변환 프로그래밍</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>모든 프로그램은 데이터를 변환한다. 받은 입력을 출력으로 바꾼다. 하지만 우리는 설계를 고민할 때 변환을 만드는 것에 대해서는 거의 생각하지 않는다.
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>오직 클래스와 모듈, 자료 구조, 알고리즘, 언어, 프레임워크에 대해서만 걱정할 뿐이다.
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>우리는 이렇게 코드에만 집중하면 핵심을 놓칠 수 있다고 본다. 프로그램이란 입력을 출력으로 바꾸는 것이라는 사고방식으로 돌아갈 필요가 있다.
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>이렇게 생각하면 그동안 고민하던 많은 세부 사항이 모두 사라진다. 구조는 명확해지고 더 일관적으로 오류를 처리하게 되어 결합도 대폭 줄어들 것이다.
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>때에 따라선 요구 사항에서 시작하는게 변환을 찾는 가장 쉬운 방법이다. 요구 사항에서 입력과 출력이 무엇인지 찾으면 전체 프로그램을 나타내는 함수가 정해진다.
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>이제 입력을 출력으로 바꿔 가는 단계들을 찾으면 된다. 일종의 하향식(top-down) 접근 방식이다.
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>요구 사항을 달성하기 위해 필요한 것은 하나로 연결된 변환들뿐이다. 각각은 앞의 변환에서 입력을 받아 처리한 결과를 다음 변환으로 넘겨준다.
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>하지만 더 깊은 의미도 있다. 객체 지향 프로그래밍 경험이 많다면 반사적으로 데이터를 숨기고, 객체 안에 캡슐화해야 한다고 느낄 것이다.
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>이런 객체들은 서로 이리저리 이야기하며 서로의 상태를 변경한다. 이런 방식을 결합을 많이 만들어 내고, 이는 결국 객체 지향 시스템이 바꾸기 어려워지는 큰 요인이 된다.
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>변환 모델에서는 이런 사고를 근본적으로 뒤엎는다. 데이터를 전체 시스템 여기저기의 작은 웅덩이에 흩어 놓는 대신, 데이터를 거대한 강으로, 흐름으로 생각하라.
+</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>
+</span><span id="__span-29-21"><a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>데이터는 기능과 동등해진다. 파이프라인은 코드 -&gt; 데이터 -&gt; 코드 -&gt; 데이터 ... 의 연속이다.
+</span><span id="__span-29-22"><a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>
+</span><span id="__span-29-23"><a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>데이터는 더 이상 클래스를 정의할 때처럼 특정한 함수들과 묶이지 않는다. 대신 우리 애플리케이션이 입력을 출력으로 바꾸어 나가는 진행 상황을 데이터로 자유롭게 표현할 수 있다.
+</span><span id="__span-29-24"><a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a>
+</span><span id="__span-29-25"><a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>이 말인즉슨 결합을 대폭 줄일 수 있다는 것이다. 어떤 함수든 매개 변수가 다른 함수의 출력 결과와 맞기만 하면 어디서나 사용하고 또 재사용할 수 있다.
+</span><span id="__span-29-26"><a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a>
+</span><span id="__span-29-27"><a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a>지금까지 우리의 변환 함수들은 모든 것이 완벽한 세계에서 작동했다. 하지만 진짜 세상에서는 어떻게 쓸 수 있을까?
+</span><span id="__span-29-28"><a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a>
+</span><span id="__span-29-29"><a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a>연쇄 변환이 일직선으로만 이어진다면 어떻게 오류 검사에 필요한 조건부 논리를 추가할 수 있을까?
+</span><span id="__span-29-30"><a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a>
+</span><span id="__span-29-31"><a id="__codelineno-29-31" name="__codelineno-29-31" href="#__codelineno-29-31"></a>여러 가지 방법이 있지만 공통으로 사용하는 기본적인 관례가 하나 있다. 바로 변환 사이에 값을 절대 날것으로 넘기지 않는 것이다.
+</span><span id="__span-29-32"><a id="__codelineno-29-32" name="__codelineno-29-32" href="#__codelineno-29-32"></a>
+</span><span id="__span-29-33"><a id="__codelineno-29-33" name="__codelineno-29-33" href="#__codelineno-29-33"></a>대신 래퍼 역할을 하는 자료 구조나 타입으로 값을 싸서 넘긴다. 이런 자료 구조나 타입은 안에 들어 있는 값이 유효한지를 추가로 알려준다.
+</span><span id="__span-29-34"><a id="__codelineno-29-34" name="__codelineno-29-34" href="#__codelineno-29-34"></a>
+</span><span id="__span-29-35"><a id="__codelineno-29-35" name="__codelineno-29-35" href="#__codelineno-29-35"></a>코드를 일련의 (중첩된) 변환으로 생각하는 접근 방식은 프로그래밍을 해방시킨다.
+</span><span id="__span-29-36"><a id="__codelineno-29-36" name="__codelineno-29-36" href="#__codelineno-29-36"></a>
+</span><span id="__span-29-37"><a id="__codelineno-29-37" name="__codelineno-29-37" href="#__codelineno-29-37"></a>익숙해지는 데는 시간이 좀 걸리지만, 일단 습관을 들이면 여러분의 코드가 더 명확해지고, 함수는 짧아지며, 설계는 단순해질 것이다. 
+</span></code></pre></div>
+<h3 id="topic-31">Topic 31 상속세</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>객체 지향 개발자 세대는 다음 둘 중 하나의 이유로 상속을 사용한다. 타입이 싫어서 아니면 타입이 좋아서.
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>타입을 싫어하는 이들은 입력하는 글자 수를 줄이기위해 상속을 쓴다. 상속으로 공통 기능을 기반 클래스에서 자식 클래스로 넘기는 것이다.
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>User 클래스와 Product 클래스는 모두 ActivateRecord::Base 의 하위 클래스다.
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>타입을 좋아하는 이들은 상속으로 클래스 간의 관계를 표현한다. Car 는 Vehicle 의 일종이다. 안타깝지만 두 가지 상속 모두 문제가 있다.
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>상속도 일종의 결합이다.  자식 클래스가 부모 클래스, 부모의 부모, 또 그 부모에게 연결되는 것은 물론이요, 자식 클래스를 사용하는 코드도 이 클래스의 모든 조상과 얽히게 된다.
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>어떤 이들은 상속을 새로운 타입을 정의하는 방법이라고 여긴다. 이들이 설계할 때 가장 좋아하는 그림은 클래스 계층도다.
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>이들은 빅토리아 시대 독립 과학자들이 자연을 바라보듯, 자꾸 풀어야 할 문제를 종류별로 분류하려고 한다.
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>
+</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>안타깝게도 클래스 사이의 아주 작은 미묘한 차이까지 잡아내서 표현하기 위해 계층 위에 계층을 덧붙이다 보면, 클래스 계층도는 순식간에 벽면 전체를 덮는 괴물로 자라난다.
+</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>
+</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>이러 복잡도는 애플리케이션을 더 취약하게 만든다. 변경 사항이 위나 아래로 여러 단계에 걸쳐 영향을 미칠 수 있기 때문이다.
+</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>
+</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>그런데 더 나쁜 것은 다중 상속 문제다. Car 는 Vehicle 의 일종일 수 있는데 동시에 Asset, InsuredItem, LoanCollateral 의 일종일 수도 있다.
+</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>
+</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>제대로 모델링하려면 다중 상속이 필요할 것이다. 아무리 복잡한 클래스 계층도가 마음에 들더라도 어차피 여러분의 도메인을 정확하게 모델링할 수는 없다.
+</span><span id="__span-30-22"><a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a>
+</span><span id="__span-30-23"><a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a>더는 상속을 쓸 필요가 없게 해 주는 세 가지 기법을 소개하겠다.
+</span><span id="__span-30-24"><a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a>
+</span><span id="__span-30-25"><a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a>- 인터페이스와 프로토콜
+</span><span id="__span-30-26"><a id="__codelineno-30-26" name="__codelineno-30-26" href="#__codelineno-30-26"></a>- 위임
+</span><span id="__span-30-27"><a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a>- 믹스인과 트레이트
+</span><span id="__span-30-28"><a id="__codelineno-30-28" name="__codelineno-30-28" href="#__codelineno-30-28"></a>
+</span><span id="__span-30-29"><a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a>여러분의 상황에 따라 더 나은 방법이 있을 것이다. 타입 정보를 공유하고 싶은 건지, 기능을 더하고 싶은 건지, 메서드를 공유하고 싶은 건지에 따라 다르다.
+</span><span id="__span-30-30"><a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a>
+</span><span id="__span-30-31"><a id="__codelineno-30-31" name="__codelineno-30-31" href="#__codelineno-30-31"></a>프로그래밍의 다른 모든 것과 마찬가지로 여러분의 목표는 의도를 가장 잘 드러내는 기법을 사용하는 것이어야 한다. 
+</span></code></pre></div>
+<h3 id="topic-32">Topic 32 설정</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>애플리케이션이 출시된 이후 바뀔 수도 있는 값에 코드가 의존하고 있다면 그 값을 애플리케이션 외부에서 관리하라.
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>여러분의 애플리케이션이 여러 환경에서 혹은 여러 고객을 위해 실행된다면 특정 환경이나 특정 고객에게 한정된 값을 애플리케이션 외부에서 관리하라.
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>일반적으로 설정 데이터 안에 넣는 것은 다음과 같다.
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>- 데이터베이스나 외부 API 같은 외부 서비스의 인증 정보
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>- 로그 레벨과 로그 저장 위치
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>- 애플리케이션이 사용하는 포트 번호, IP 주소, 기계나 클러스터 이름
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>- 특정 실행 환경에만 적용되는 검증 매개 변수
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>- 외부에서 지정하는 매개 변수 (예를 들어 배송비)
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>- 지역에 따른 세부 서식
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>- 라이선스 키
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>대부분의 프레임워크 그리고 상당수의 애플리케이션이 설정을 일반 파일이나 데이터베이스 테이블로 관리한다.
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>
+</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>정보를 일반 파일로 관리할 때는 널리 쓰이는 일반 텍스트 형식을 사용하는 추세다. 2021년 기준으로는 YAML 과 JSON 이 가장 많이 쓰인다.
+</span><span id="__span-31-18"><a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>
+</span><span id="__span-31-19"><a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>스크립트 언어로 작성된 애플리케이션에서는 설정만을 담는 특수 목적 소스 코드를 사용하기도 한다.
+</span><span id="__span-31-20"><a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>
+</span><span id="__span-31-21"><a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a>어떤 형태를 사용하든 여러분의 애플리케이션에서는 설정을 자료 구조 형태로 불러온다. 보통 처음 애플리케이션을 시작할 때 읽어올 것이다.
+</span><span id="__span-31-22"><a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a>
+</span><span id="__span-31-23"><a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a>흔히 이 자료 구조를 전역에서 접근할 수 있도록 하는데, 코드의 어느 부분에서든 설정 정보에 쉽게 접근할 수 있도록 하기 위해서일 것이다.
+</span><span id="__span-31-24"><a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a>
+</span><span id="__span-31-25"><a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a>우리는 그렇게 하지 않기를 추천한다. 대신 설정 정보를 (얇은) API 뒤로 숨겨라. 그러면 설정을 표현하는 세부 사항으로부터 여러분의 코드를 떼어 놓을 수 있다.
+</span><span id="__span-31-26"><a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a>
+</span><span id="__span-31-27"><a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a>정적 설정이 많이 쓰이긴 하지만 요즘 우리는 다른 방식을 더 좋아한다.
+</span><span id="__span-31-28"><a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a>
+</span><span id="__span-31-29"><a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a>설정 정보를 애플리케이션 외부에서 관리하는 것은 동일하지만, 일반 파일이나 데이터베이스가 아니라 서비스 API 뒤에서 관리하는 것을 선호한다.
+</span><span id="__span-31-30"><a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a>
+</span><span id="__span-31-31"><a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a>서비스형 설정에는 몇 가지 장점이 있다.
+</span><span id="__span-31-32"><a id="__codelineno-31-32" name="__codelineno-31-32" href="#__codelineno-31-32"></a>
+</span><span id="__span-31-33"><a id="__codelineno-31-33" name="__codelineno-31-33" href="#__codelineno-31-33"></a>- 여러 애플리케이션이 설정 정보를 공유할 수 있다. 인증과 접근 제어를 붙여서 애플리케이션마다 보이는 정보가 다르게 만들 수도 있다.
+</span><span id="__span-31-34"><a id="__codelineno-31-34" name="__codelineno-31-34" href="#__codelineno-31-34"></a>- 여러 인스턴스에 걸쳐서 전체 설정을 한번에 바꿀 수 있다.
+</span><span id="__span-31-35"><a id="__codelineno-31-35" name="__codelineno-31-35" href="#__codelineno-31-35"></a>- 설정 데이터를 전용 UI 로 관리할 수 있다.
+</span><span id="__span-31-36"><a id="__codelineno-31-36" name="__codelineno-31-36" href="#__codelineno-31-36"></a>- 설정 데이터를 동적으로 계속 바꿀 수 있다.
+</span></code></pre></div>
+<h2 id="6">6장 동시성</h2>
+<h3 id="topic-33">Topic 33 시간적 결합 깨트리기</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>시간적 결합이란 도대체 무엇인가? 궁금할 것이다. 이것은 시간에 관한 이야기다.
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>소프트웨어 아키텍처에서 시간이라는 측면은 자주 무시된다. 우리가 신경쓰는 유일한 시간은 일정, 바로 출시까지 남은 시간뿐이다.
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>하지만 여기서 이야기할 것은 이런 종류의 시간이 아니다. 그 대신 소프트웨어의 설계 요소로서 시간의 역할에 대해 이야기하려고 한다.
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>시간에는 우리가 신경 써야 할 측면이 두 가지 있는데, 동시성 (동시에 일어나는 일들)과 순서 (시간의 흐름 속에서 일들의 상대적인 위치) 다.
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>우리는 보통 프로그래밍할 때 두 측면 모두 특별히 신경 쓰기 않는다. 아키텍처를 설계하거나 프로그램을 짜기 시작할 때는 보통 직선적 사고를 하기 마련이다.
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>하지만 이런 식으로 생각하다 보면 시간적 결합을 만들게 된다.
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>메서드 A 는 언제나 반드시 메서드 B 보다 먼저 호출해야 한다.
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>보고서는 한 번에 오직 하나만 생성할 수 있다.
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>버튼 클릭을 처리하려면 먼저 화면이 갱신되어야 한다.
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>이러한 접근 방법은 그다지 유연하지 않고 현실과도 동떨어져 있다.
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>우리는 동시성을 확보해야 한다. 시간이나 순서에 의존하는 시간적 결합을 끊는 방법을 생각해 내야 한다. 
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>많은 프로젝트에서 설계 과정의 일환으로 애플리케이션의 작업 흐름을 모델화하고 분석하는 작업이 필요하다.
+</span><span id="__span-32-22"><a id="__codelineno-32-22" name="__codelineno-32-22" href="#__codelineno-32-22"></a>
+</span><span id="__span-32-23"><a id="__codelineno-32-23" name="__codelineno-32-23" href="#__codelineno-32-23"></a>우리는 동시에 일어나도 되는 게 뭐고, 반드시 순서대로 일어나야 하는 건 어떤 것인지 찾아내길 원한다.
+</span><span id="__span-32-24"><a id="__codelineno-32-24" name="__codelineno-32-24" href="#__codelineno-32-24"></a>
+</span><span id="__span-32-25"><a id="__codelineno-32-25" name="__codelineno-32-25" href="#__codelineno-32-25"></a>활동 다이어그램 같은 표기법을 사용해서 작업 흐름을 기록하는 것이 한 방법이다.
+</span><span id="__span-32-26"><a id="__codelineno-32-26" name="__codelineno-32-26" href="#__codelineno-32-26"></a>
+</span><span id="__span-32-27"><a id="__codelineno-32-27" name="__codelineno-32-27" href="#__codelineno-32-27"></a>활동 다이어그램을 사용하면 동시에 수행할 수 있는데도 아직 동시에 하고 있지 않은 활동들을 찾아내서 병렬성을 극대화할 수 있다.
+</span><span id="__span-32-28"><a id="__codelineno-32-28" name="__codelineno-32-28" href="#__codelineno-32-28"></a>
+</span><span id="__span-32-29"><a id="__codelineno-32-29" name="__codelineno-32-29" href="#__codelineno-32-29"></a>활동 다이어그램은 동시에 작업할 수 있는 부분들을 보여준다. 하지만 진짜로 동시에 하는 것이 좋은지는 알려주지 않는다.
+</span><span id="__span-32-30"><a id="__codelineno-32-30" name="__codelineno-32-30" href="#__codelineno-32-30"></a>
+</span><span id="__span-32-31"><a id="__codelineno-32-31" name="__codelineno-32-31" href="#__codelineno-32-31"></a>그래서 설계가 필요하다. 우리는 시간이 걸리지만, 우리 코드가 아닌 곳에서 시간이 걸리는 활동을 찾고 싶다.
+</span><span id="__span-32-32"><a id="__codelineno-32-32" name="__codelineno-32-32" href="#__codelineno-32-32"></a>
+</span><span id="__span-32-33"><a id="__codelineno-32-33" name="__codelineno-32-33" href="#__codelineno-32-33"></a>다시 한번 차이를 되새겨 보자. 동시성은 소프트웨어 동작 방식이고, 병렬성은 하드웨어가 하는 것이다.
+</span><span id="__span-32-34"><a id="__codelineno-32-34" name="__codelineno-32-34" href="#__codelineno-32-34"></a>
+</span><span id="__span-32-35"><a id="__codelineno-32-35" name="__codelineno-32-35" href="#__codelineno-32-35"></a>컴퓨터 한 대에 있든 아니면 연결된 여러 대에 있든 우리에게 여러 개의 프로세서가 있다면, 그리고 작업을 프로세서들에게 나누어 줄 수 있다면 전체 소요 시간을 단축할 수 있다.
+</span><span id="__span-32-36"><a id="__codelineno-32-36" name="__codelineno-32-36" href="#__codelineno-32-36"></a>
+</span><span id="__span-32-37"><a id="__codelineno-32-37" name="__codelineno-32-37" href="#__codelineno-32-37"></a>이런 식으로 나누기에 가장 이상적인 것은 비교적 독립적인 부분 작업들이다. 다른 부분 작업을 기다릴 필요 없이 진행할 수 있으면 좋다.
+</span><span id="__span-32-38"><a id="__codelineno-32-38" name="__codelineno-32-38" href="#__codelineno-32-38"></a>
+</span><span id="__span-32-39"><a id="__codelineno-32-39" name="__codelineno-32-39" href="#__codelineno-32-39"></a>일반적인 형태는 커다란 작업을 독립적인 부분들로 쪼개서 병렬로 각각 처리한 다음, 결과를 합치는 것이다.
+</span></code></pre></div>
+<h3 id="topic-34">Topic 34 공유 상태는 틀린 상태</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>레스토랑에서 메인 요리를 모두 먹은 후 종업원에게 애플파이가 남아 있는지 묻는다. 종업원은 어깨 너머를 돌아보더니 진열장에 한 조각이 남아 있는 것을 확인하고는 그렇다고 대답한다.
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>한편 레스토랑의 반대쪽에서도 다른 고객이 종업원에게 같은 질문을 하고 있다. 이 종업원도 진열장을 쳐다보고는 한 조각이 있는 것을 확인하고 주문을 받는다.
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>두 고객 중 한 명은 실망하게 될 것이다. 문제는 상태가 공유된 것이다. 레스토랑의 종업원들은 서로를 고려하지 않고 진열장만 확인했다.
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>세마포어는 단순히 한 번에 한 사람만이 가질 수 있는 무언가다. 여러분은 세마포어를 만들어서 다른 리소스의 사용을 제어하는 데 쓸 수 있다.
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>우리 예에서는 진열장 사용을 제어하기 위해 세마포어를 쓸 수 있다. 진열장의 내용물을 바꾸고 싶은 사람은 세마포어를 소유하고 있을 때만 바꿀 수 있다는 규칙을 도입하는 것이다.
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>레스토랑에서는 물리적인 세마포어로 파이 문제를 해결하기로 했다. 진열장 위에 도깨비 인형을 하나 올려 둔다.
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>모든 종업원은 파이 주문을 받기 전에 도깨비 인형을 손에 넣어야 한다. 주문을 받고 파이를 접시에 담아 고객에게 낸 후에는 도깨비 인형을 보물 파이를 지키는 원래 위치에 되돌려 놓는다.
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>
+</span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>다음 주문을 받을 수 있도록 말이다.
+</span><span id="__span-33-16"><a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>
+</span><span id="__span-33-17"><a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>이 접근 방식에는 몇 가지 문제가 있다. 가장 큰 문제는 진열장에 접근하는 모든 사람이 빠짐없이 세마포어를 사용해야만 제대로 동작한다는 것이다.
+</span><span id="__span-33-18"><a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>
+</span><span id="__span-33-19"><a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>만약 누군가가 깜빡한다면, 다시 말해서 어떤 개발자가 약속을 지키지 않는 코드를 쓴다면 다시 혼돈에 빠진다.
+</span><span id="__span-33-20"><a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a>
+</span><span id="__span-33-21"><a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>현재의 설계가 미흡한 것은 진열장 사용을 보호할 책임을 진열장을 사용하는 사람에게 전가하기 때문이다. 제어를 중앙으로 집중시키자.
+</span><span id="__span-33-22"><a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a>
+</span><span id="__span-33-23"><a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a>그러려면 API 를 바꿔서 조업원이 하나의 호출로 파이 조각 수를 확인함과 동시에 파이 조각을 가져가도록 만들어야 한다.
+</span><span id="__span-33-24"><a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a>
+</span><span id="__span-33-25"><a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a>우리 레스토랑에서 아이스크림 냉동고를 설치했다. 고객이 파이 위에 아이스크림을 얹은 디저트인 파이 알라모드를 주문하면 종업원은 파이와 아이스크림이 둘 다 있는지 확인해야 한다.
+</span><span id="__span-33-26"><a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a>
+</span><span id="__span-33-27"><a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a>파이 조각을 꺼낸 후 아이스크림을 한 스쿱 뜨려고 보니 아이스크림이 없으면 어떻게 할 것인가? 이 고객은 반드시 아이스크림도 먹고 싶다고 한다.
+</span><span id="__span-33-28"><a id="__codelineno-33-28" name="__codelineno-33-28" href="#__codelineno-33-28"></a>
+</span><span id="__span-33-29"><a id="__codelineno-33-29" name="__codelineno-33-29" href="#__codelineno-33-29"></a>그리고 파이가 이미 우리 손에 있기 때문에 아이스크림 없이 파이만 원하는 순수주의자 고객도 그 파이를 받을 수 없다.
+</span><span id="__span-33-30"><a id="__codelineno-33-30" name="__codelineno-33-30" href="#__codelineno-33-30"></a>
+</span><span id="__span-33-31"><a id="__codelineno-33-31" name="__codelineno-33-31" href="#__codelineno-33-31"></a>이 문제는 진열장에 파이 조각을 다시 반환하는 메서드를 추가하여 해결할 수 있다.
+</span><span id="__span-33-32"><a id="__codelineno-33-32" name="__codelineno-33-32" href="#__codelineno-33-32"></a>
+</span><span id="__span-33-33"><a id="__codelineno-33-33" name="__codelineno-33-33" href="#__codelineno-33-33"></a>앞의 예에서는 리소스 관리 코드를 리소스 클래스 안으로 옮겨서 이런 문제를 해결했다. 하지만 여기서는 리소스가 두 가지다.
+</span><span id="__span-33-34"><a id="__codelineno-33-34" name="__codelineno-33-34" href="#__codelineno-33-34"></a>
+</span><span id="__span-33-35"><a id="__codelineno-33-35" name="__codelineno-33-35" href="#__codelineno-33-35"></a>코드를 진열장으로 옮겨야 할까, 아니면 냉동고로 옮겨야 할까? 우리 생각에는 둘 다 답이 아니다.
+</span><span id="__span-33-36"><a id="__codelineno-33-36" name="__codelineno-33-36" href="#__codelineno-33-36"></a>
+</span><span id="__span-33-37"><a id="__codelineno-33-37" name="__codelineno-33-37" href="#__codelineno-33-37"></a>실용주의적인 접근 방법은 애플파이 알라모드 자체도 우리의 리소스로 보는 것이다.
+</span><span id="__span-33-38"><a id="__codelineno-33-38" name="__codelineno-33-38" href="#__codelineno-33-38"></a>
+</span><span id="__span-33-39"><a id="__codelineno-33-39" name="__codelineno-33-39" href="#__codelineno-33-39"></a>이 코드를 새로운 모듈로 옮기고, 클라이언트는 그냥 아이스크림 올린 애플파이 주세요 라고 요청할 수 있어야 한다. 결과는 성공 아니면 실패뿐이다.
+</span><span id="__span-33-40"><a id="__codelineno-33-40" name="__codelineno-33-40" href="#__codelineno-33-40"></a>
+</span><span id="__span-33-41"><a id="__codelineno-33-41" name="__codelineno-33-41" href="#__codelineno-33-41"></a>공유 메모리는 동시성 문제의 원인으로 많이 지목받는다. 하지만 사실 수정 가능한 리소스를 공유하는 애플리케이션 코드 어디에서나 동시성 문제가 발생할 수 있다.
+</span><span id="__span-33-42"><a id="__codelineno-33-42" name="__codelineno-33-42" href="#__codelineno-33-42"></a>
+</span><span id="__span-33-43"><a id="__codelineno-33-43" name="__codelineno-33-43" href="#__codelineno-33-43"></a>여러분 코드의 인스턴스 둘 이상이 파일, 데이터베이스, 외부 서비스 등 어떤 리소스에 동시에 접근할 수 있다면 여러분은 잠재적인 문제를 안고 있는 것이다.
+</span></code></pre></div>
+<h3 id="topic-35">Topic 35 액터와 프로세스</h3>
+<h3 id="topic-36">Topic 36 칠판</h3>
+<h2 id="7">7장 코딩하는 동안</h2>
+<h3 id="topic-37">Topic 37 파충류의 뇌에 귀 기울이기</h3>
+<h3 id="topic-38">Topic 38 우연에 맡기는 프로그래밍</h3>
+<h3 id="topic-39">Topic 39 알고리즘의 속도</h3>
+<h3 id="topic-40">Topic 40 리팩터링</h3>
+<h3 id="topic-41">Topic 41 테스트로 코딩하기</h3>
+<h3 id="topic-42">Topic 42 속성 기반 테스트</h3>
+<h3 id="topic-43">Topic 43 바깥에서는 안전에 주의하라</h3>
+<h3 id="topic-44">Topic 44 이름 짓기</h3>
+<h2 id="8">8장 프로젝트 전에</h2>
+<h3 id="topic-45">Topic 45 요구 사항의 구렁텅이</h3>
+<h3 id="topic-46">Topic 46 불가능한 퍼즐 풀기</h3>
+<h3 id="topic-47">Topic 47 함께 일하기</h3>
+<h3 id="topic-48">Topic 48 애자일의 핵심</h3>
+<h2 id="9">9장 실용주의 프로젝트</h2>
+<h3 id="topic-49">Topic 49 실용주의 팀</h3>
+<h3 id="topic-50">Topic 50 코코넛만으로는 부족하다</h3>
+<h3 id="topic-51">Topic 51 실용주의 시작 도구</h3>
+<h3 id="topic-52">Topic 52 사용자를 기쁘게 하라</h3>
+<h3 id="topic-53">Topic 53 오만과 편견</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
