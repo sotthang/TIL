@@ -29,3 +29,4 @@
 - [early return](early_return.md)
 - [rest](rest.md)
 - [singleton pattern](singleton.md)
+- [asynchronous](asynchronous.md)

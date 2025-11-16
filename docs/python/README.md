@@ -39,3 +39,4 @@
   - [19.12 Django Rest Framework](django_rest_framework.md)
 - [20. PDB](pdb.md)
 - [21. Docstring](docstring.md)
+- [22. GIL (Global Interpreter Lock)](gil.md)
